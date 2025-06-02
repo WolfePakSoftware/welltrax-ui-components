@@ -39,6 +39,7 @@ export interface ISelectItemsProps {
   };
   onReturnAssignedUnassignedItems?: (obj: AssignedUnassignedItems) => void;
   getTemplate?(element: IItemsList): any;
+  ignoreFilterForItemsAssigned?: boolean;
 }
 
 export interface ISelectItemsState {
@@ -78,7 +79,9 @@ export class SelectUnselectItems extends Component<
   componentDidUpdate(prevProps: ISelectItemsProps) {
     if (this.props.itemsUnassigned !== prevProps.itemsUnassigned) {
       this.setState({
-        itemsAssigned: [],
+        itemsAssigned: this.props.ignoreFilterForItemsAssigned
+          ? this.props.itemsAssigned
+          : [],
         itemsUnassigned: this.props.itemsUnassigned
       });
     }
