@@ -68,6 +68,11 @@ export class VMultiSelect<T extends SelectableItem> extends React.PureComponent<
     // Wrap the itemRenderer to handle selectable state
     const wrappedItemRenderer = (item: T, itemProps: any) => {
       const originalElement = itemRenderer(item, itemProps);
+
+      // Return null if originalElement is null
+      if (!originalElement) {
+        return null;
+      }
       if (item.selectable === false) {
         // Apply grayed out style to non-selectable items
         return React.cloneElement(originalElement, {

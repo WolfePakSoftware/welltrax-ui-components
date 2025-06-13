@@ -67,6 +67,8 @@ export interface IItemMultiple {
   label: string;
   rep?: string;
   readonly?: boolean;
+  selectable?: boolean;  // Optional boolean property
+
 }
 
 const clearToken = `$empty#Option#first#item_unique_`;
