@@ -21,22 +21,18 @@ import { invoke } from 'lodash';
 
 const Popover: PropsWithChildren<any> = WPopover;
 
-export interface SelectableItem {
-  selectable?: boolean;
-}
-
-export interface IVMultiSelectProps<T extends SelectableItem> extends IMultiSelectProps<T> {
+export interface IVMultiSelectProps<T> extends IMultiSelectProps<T> {
   resetOnClose?: boolean;
 }
 
-export class VMultiSelect<T extends SelectableItem> extends React.PureComponent<
+export class VMultiSelect<T> extends React.PureComponent<
   IVMultiSelectProps<T>,
   IMultiSelectState
 > {
   public static displayName = `${DISPLAYNAME_PREFIX}.MultiSelect`;
   public static defaultProps = { fill: false, placeholder: 'Search...' };
 
-  public static ofType<T extends SelectableItem>() {
+  public static ofType<T>() {
     return VMultiSelect as new (props: IMultiSelectProps<T>) => VMultiSelect<T>;
   }
 
@@ -61,35 +57,12 @@ export class VMultiSelect<T extends SelectableItem> extends React.PureComponent<
       openOnKeyDown,
       popoverProps,
       tagInputProps,
-      itemRenderer,
       ...restProps
     } = this.props;
-
-    // Wrap the itemRenderer to handle selectable state
-    const wrappedItemRenderer = (item: T, itemProps: any) => {
-      const originalElement = itemRenderer(item, itemProps);
-
-      // Return null if originalElement is null
-      if (!originalElement) {
-        return null;
-      }
-      if (item.selectable === false) {
-        // Apply grayed out style to non-selectable items
-        return React.cloneElement(originalElement, {
-          style: {
-            ...originalElement.props.style,
-            opacity: 0.5,
-            cursor: 'not-allowed'
-          }
-        });
-      }
-      return originalElement;
-    };
 
     return (
       <this.TypedQueryList
         {...restProps}
-        itemRenderer={wrappedItemRenderer}
         onItemSelect={this.handleItemSelect}
         onQueryChange={this.handleQueryChange}
         ref={this.refHandlers.queryList}
@@ -160,11 +133,6 @@ export class VMultiSelect<T extends SelectableItem> extends React.PureComponent<
     item: T,
     evt?: React.SyntheticEvent<HTMLElement>
   ) => {
-    // Prevent selection of non-selectable items
-    if (item.selectable === false) {
-      return;
-    }
-    
     this.input?.focus();
     Utils.safeInvoke(this.props.onItemSelect, item, evt);
   };
