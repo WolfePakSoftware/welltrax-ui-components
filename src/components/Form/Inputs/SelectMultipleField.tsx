@@ -107,16 +107,21 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
     const founded = selectedItems.some(
       selected => selected.value === item.value
     );
+    
+    // Check if item is selectable (default to true if not specified)
+    const isSelectable = item.selectable !== false;
+    
     return (
       <MenuItem
         icon={founded ? 'tick' : 'blank'}
-        disabled={modifiers.disabled}
+        disabled={!isSelectable || modifiers.disabled}
         label={item.rep}
-        active={active}
+        active={active && isSelectable}
         key={item.value}
-        onClick={handleClick}
+        onClick={isSelectable ? handleClick : undefined}
         text={item.label}
         shouldDismissPopover={item.value === clearToken}
+        style={!isSelectable ? { opacity: 0.5, cursor: 'not-allowed' } : undefined}
         labelElement={
           item.value === clearToken && item.label === 'No Selection' ? (
             <Icon color={(active && 'white') || '#7486949c'} icon={'reset'} />
@@ -262,6 +267,11 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
   };
 
   const onItemSelected = (value: IItemRenderer) => {
+    // Skip if item is not selectable
+    if (value?.item?.selectable === false) {
+      return;
+    }
+    
     if (usedClear.current) {
       noChangeToClear.current = true;
       usedClear.current = false;
