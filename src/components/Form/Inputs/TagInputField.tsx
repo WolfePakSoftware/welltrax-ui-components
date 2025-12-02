@@ -41,7 +41,7 @@ export interface ITagFieldProps extends IFieldProps {
 
 @observer
 export class VTagInputField extends React.Component<ITagFieldProps> {
-  private innerSeparator = /[,\n\r\s]/;
+  private innerSeparator = /[,\n\r]/;
   @observable inputValue: any;
   @observable onPasteCapture: any;
   inputRef: any;
