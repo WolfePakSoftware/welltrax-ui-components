@@ -76,9 +76,9 @@
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.25",
     "@types/jquery": "^3.3.31",
-    "@types/lodash": "^4.14.149",
+    "@types/lodash": "4.14.202",
     "@types/node": "13.1.1",
-    "@types/react": "^18.0.3",
+    "@types/react": "18.2.45",
     "@types/react-beautiful-dnd": "11.0.7",
     "@types/react-color": "^3.0.1",
     "@types/react-custom-scrollbars": "^4.0.6",
@@ -152,6 +152,12 @@
     "webpack-dev-server": "3.11.2",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
+  },
+  "resolutions": {
+    "@types/babel__traverse": "7.20.4",
+    "@types/minimatch": "5.1.2",
+    "@types/react": "18.2.45",
+    "cheerio": "1.0.0-rc.12"
   },
   "config": {
     "commitizen": {
