@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import { VTabsPanel } from './TabsPanel';
 import { ITabsPanelTypes } from './types';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
   const tabList: ITabsPanelTypes[] = [
     {
       icon: { intent: 'primary', icon: 'home', iconSize: 16 },
@@ -25,7 +24,7 @@ it('renders without crashing', () => {
       content: <h3>it's me</h3>
     }
   ];
-  ReactDOM.render(
+  const { container } = render(
     <VTabsPanel
       backgroundColor={'antiquewhite'}
       size={'small'}
@@ -34,14 +33,12 @@ it('renders without crashing', () => {
       activeBorderColor={'red'}
       active={'3'}
       handleChange={() => {}}
-    />,
-    div
+    />
   );
-  ReactDOM.unmountComponentAtNode(div);
+  expect(container).toBeInTheDocument();
 });
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
   const tabList: ITabsPanelTypes[] = [
     {
       icon: { intent: 'primary', icon: 'home', iconSize: 16 },
@@ -62,7 +59,7 @@ it('renders without crashing', () => {
       content: <h3>it's me</h3>
     }
   ];
-  ReactDOM.render(
+  const { container } = render(
     <VTabsPanel
       backgroundColor={'antiquewhite'}
       size={'small'}
@@ -71,14 +68,12 @@ it('renders without crashing', () => {
       activeBorderColor={'red'}
       active={'3'}
       handleChange={() => {}}
-    />,
-    div
+    />
   );
-  ReactDOM.unmountComponentAtNode(div);
+  expect(container).toBeInTheDocument();
 });
 
 it('render correctly VTable with sortable props', () => {
-  const div = document.createElement('div');
   const tabList: ITabsPanelTypes[] = [
     {
       icon: { intent: 'primary', icon: 'home', iconSize: 16 },
@@ -99,7 +94,7 @@ it('render correctly VTable with sortable props', () => {
       content: <h3>it's me</h3>
     }
   ];
-  ReactDOM.render(
+  const { container } = render(
     <VTabsPanel
       backgroundColor={'antiquewhite'}
       size={'small'}
@@ -108,8 +103,7 @@ it('render correctly VTable with sortable props', () => {
       activeBorderColor={'red'}
       active={'3'}
       handleChange={() => {}}
-    />,
-    div
+    />
   );
-  ReactDOM.unmountComponentAtNode(div);
+  expect(container).toBeInTheDocument();
 });
