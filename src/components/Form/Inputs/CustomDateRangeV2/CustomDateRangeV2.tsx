@@ -9,6 +9,7 @@ import {
   IVCustomDateRangeV2
 } from './types/types';
 import { StyledDateRange } from './styles/styles';
+import { useDefaultMaxDate } from '../useDefaultMaxDate';
 
 export const VCustomDateRangeV2 = observer((props: IVCustomDateRangeV2) => {
   const {
@@ -17,8 +18,10 @@ export const VCustomDateRangeV2 = observer((props: IVCustomDateRangeV2) => {
     format = 'MM/DD/YYYY',
     onChange,
     value,
-    onChangeShortcut
+    onChangeShortcut,
+    maxDate
   } = props;
+  const defaultMaxDate = useDefaultMaxDate();
 
   const {
     range,
@@ -87,6 +90,7 @@ export const VCustomDateRangeV2 = observer((props: IVCustomDateRangeV2) => {
       ref={setComponentRef}
       isUserDefined={isUserDefined}
       allowSingleDayRange={true}
+      maxDate={maxDate ?? defaultMaxDate}
       timePrecision={hasTimeProps ? TimePrecision.MINUTE : undefined}
       {...momentFormatter(format)}
       shortcuts={shortcuts}
