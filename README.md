@@ -11,7 +11,6 @@ It's an extension of the blueprint framework. It has other components that are n
 - VDragAndDropList - Drag and Drop List Component use the library react-beautiful-dnd.
 - VPaginator - Native Paginator Component, not libraries.
 - VProgressLabel - Native Component, not libraries. Useful to represent multiples progress bar.
-- VCarousel - Native Component, uses react-pose for animations.
 - VSelectionList - Native Component.
 - VSelectUnselectItems - Native Component to switch items between lists.
 - VSpinner - Extension of @blueprintjs/core Spinner.
