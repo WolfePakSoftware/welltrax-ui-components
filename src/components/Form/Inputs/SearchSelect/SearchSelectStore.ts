@@ -6,7 +6,6 @@ export class SearchSelectStore {
   @observable isOpen: boolean = false;
   @observable selection: any = null;
   @observable options: IItem[] = [];
-  @observable search: string = '';
   @observable invokeKeyPress: any = 'NONE';
   @observable hasChange: boolean = false;
   @observable popoverWidth: number;
@@ -41,9 +40,6 @@ export class SearchSelectStore {
   };
   @action setOptions = (options: IItem[]) => {
     this.options = options;
-  };
-  @action setSearch = (search: string) => {
-    this.search = search;
   };
   @action setInvokeKeyPress = (invokeKeyPress: any) => {
     this.invokeKeyPress = invokeKeyPress;

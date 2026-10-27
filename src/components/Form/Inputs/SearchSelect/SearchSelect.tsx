@@ -70,8 +70,7 @@ export const SearchSelect = observer((props: IProps) => {
         props.popoverWidth || props.fixedInputWidthPx || 150
       )
   );
-  // React state, not the MobX store: a store change can leave this observer waiting on a deferred
-  // render under React 18 createRoot, and keys typed meanwhile were reverted
+  // React state, so keys typed while a store-driven render is pending under React 18 createRoot aren't reverted
   const [search, setSearch] = useState('');
 
   const findOptionsValue = (options: IItem[], value: number | string): any => {
