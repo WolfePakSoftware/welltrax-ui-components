@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from 'react';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { cloneDeep, find, isArray, isNil, orderBy, remove } from 'lodash';
 import {
   Classes,
@@ -46,7 +46,6 @@ interface IProps {
 export const SearchSelect = observer((props: IProps) => {
   const {
     options,
-    search,
     popoverWidth,
     invokeKeyPress,
     enableFilter,
@@ -56,7 +55,6 @@ export const SearchSelect = observer((props: IProps) => {
     displayTooltip,
     arrayOfValues,
     hideToolTip,
-    setSearch,
     setInvokeKeyPress,
     setEnableFilter,
     setPopoverWidth,
@@ -72,6 +70,9 @@ export const SearchSelect = observer((props: IProps) => {
         props.popoverWidth || props.fixedInputWidthPx || 150
       )
   );
+  // React state, not the MobX store: a store change can leave this observer waiting on a deferred
+  // render under React 18 createRoot, and keys typed meanwhile were reverted
+  const [search, setSearch] = useState('');
 
   const findOptionsValue = (options: IItem[], value: number | string): any => {
     return find(
