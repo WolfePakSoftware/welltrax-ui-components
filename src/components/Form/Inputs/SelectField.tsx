@@ -400,7 +400,7 @@ export class VSelectField extends React.Component<ISelectFieldProps, IState> {
             {iconOnly ? (
               <ButtonGroup>
                 <Button
-                  className={minimal ? 'bp3-minimal' : ''}
+                  className={minimal ? Classes.MINIMAL : ''}
                   style={{
                     justifyContent: 'center',
                     color: this.props.color && this.props.color
@@ -420,7 +420,7 @@ export class VSelectField extends React.Component<ISelectFieldProps, IState> {
                 onMouseLeave={() => {
                   this.showClear = false;
                 }}
-                className={minimal ? 'bp3-minimal' : ''}
+                className={minimal ? Classes.MINIMAL : ''}
                 {...{
                   icon,
                   disabled

@@ -1,3 +1,4 @@
+import { Classes } from '@blueprintjs/core';
 import { PropsWithChildren } from 'react';
 import styled, { css } from 'styled-components';
 import { VInputField } from '../Form';
@@ -89,7 +90,7 @@ export const StyledCustomDraggableItem = styled.div`
     padding-bottom: 2px;
     display: flex;
     align-items: flex-end;
-    & > .bp3-button {
+    & > .${Classes.BUTTON} {
       margin-right: 1px;
     }
   }

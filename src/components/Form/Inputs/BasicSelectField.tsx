@@ -1,12 +1,7 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 /** Blueprint */
-import {
-  HTMLSelect,
-  IIconProps,
-  Intent,
-  IOptionProps
-} from '@blueprintjs/core';
+import { HTMLSelect, IconProps, Intent, OptionProps } from '@blueprintjs/core';
 /** FieldState */
 import { IFieldProps } from './IFieldProps';
 import { StyledFormGroup } from './style';
@@ -18,8 +13,8 @@ import { computed } from 'mobx';
  * Field Props
  */
 export interface IBasicSelectFieldProps extends IFieldProps {
-  icon?: Partial<IIconProps>;
-  options: IOptionProps[];
+  icon?: Partial<IconProps>;
+  options: OptionProps[];
   minimal?: boolean;
 }
 

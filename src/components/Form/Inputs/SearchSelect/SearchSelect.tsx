@@ -8,6 +8,7 @@ import {
   Popover as WPopover,
   Tooltip as WTooltip
 } from '@blueprintjs/core';
+import { Classes as SelectClasses } from '@blueprintjs/select';
 
 import { IItem } from '../../types';
 import { SearchSelectItems } from './SearchSelectItems';
@@ -349,7 +350,7 @@ export const SearchSelect = observer((props: IProps) => {
   return (
     <Popover
       targetClassName={'gsi-select-popover'}
-      popoverClassName={'bp3-select-popover gsi-select-popover'}
+      popoverClassName={`${SelectClasses.SELECT_POPOVER} gsi-select-popover`}
       enforceFocus={false}
       isOpen={isOpen}
       autoFocus={false}

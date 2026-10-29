@@ -447,7 +447,7 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
         >
           {iconOnly ? (
             <Button
-              className={minimal ? 'bp3-minimal' : ''}
+              className={minimal ? Classes.MINIMAL : ''}
               style={{ justifyContent: 'center' }}
               {...{
                 icon,
@@ -457,7 +457,7 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
             />
           ) : (
             <Button
-              className={minimal ? 'bp3-minimal' : ''}
+              className={minimal ? Classes.MINIMAL : ''}
               {...{
                 icon,
                 disabled

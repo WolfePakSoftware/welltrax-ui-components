@@ -1,5 +1,6 @@
 import React from 'react';
 import { times } from 'lodash';
+import { Classes } from '@blueprintjs/core';
 
 import { FakeContentForm, FakeListContainer } from './styles';
 
@@ -11,11 +12,11 @@ interface IProps {
 export const VSkeletonForm = (props: IProps) => {
   return (
     <FakeListContainer
-      className={props.hideShadow ? '' : 'bp3-skeleton-container'}
+      className={props.hideShadow ? '' : `${Classes.SKELETON}-container`}
     >
       {times(props.numberItems ? props.numberItems : 24).map(
         (value: any, index: number) => (
-          <FakeContentForm className={'bp3-skeleton'} key={index} />
+          <FakeContentForm className={Classes.SKELETON} key={index} />
         )
       )}
     </FakeListContainer>

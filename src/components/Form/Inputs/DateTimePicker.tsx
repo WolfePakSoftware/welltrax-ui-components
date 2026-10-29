@@ -4,9 +4,9 @@ import { Icon, IconName, Intent, IPopoverProps } from '@blueprintjs/core';
 import {
   DateFormatProps,
   DatePickerModifiers,
-  TimePicker
+  TimePicker,
+  TimePrecision
 } from '@blueprintjs/datetime';
-import { TimePrecision } from '@blueprintjs/datetime/lib/esm/timePicker';
 import { observer } from 'mobx-react';
 import moment from 'moment';
 import 'moment/locale/en-gb';

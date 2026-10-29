@@ -8,6 +8,7 @@ import {
   PopoverInteractionKind,
   Position
 } from '@blueprintjs/core';
+import { Classes as SelectClasses } from '@blueprintjs/select';
 import { observer } from 'mobx-react';
 import React, { FC, PropsWithChildren } from 'react';
 import { IItem } from '../../types';
@@ -152,7 +153,7 @@ export const VSearchSelectFieldAsync: FC<VSearchSelectFieldAsyncProps> = observe
           <Popover
             {...{ isOpen }}
             targetClassName={'gsi-select-popover'}
-            popoverClassName={'bp3-select-popover gsi-select-popover'}
+            popoverClassName={`${SelectClasses.SELECT_POPOVER} gsi-select-popover`}
             enforceFocus={false}
             autoFocus={false}
             canEscapeKeyClose={true}

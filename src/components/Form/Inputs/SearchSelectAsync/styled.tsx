@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Classes } from '@blueprintjs/core';
 
 export const VSearchSelectBody = styled.div`
-  .bp3-form-group {
+  .${Classes.FORM_GROUP} {
     margin: 0 0 2px;
     cursor: pointer;
 
@@ -10,7 +11,7 @@ export const VSearchSelectBody = styled.div`
     }
   }
 
-  span.bp3-popover-wrapper {
+  span.${Classes.POPOVER_WRAPPER} {
     span.gsi-select-popover {
       width: 100%;
     }

@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 /** Blueprint */
-import { Alignment, Intent, IOptionProps, RadioGroup } from '@blueprintjs/core';
+import { Alignment, Intent, OptionProps, RadioGroup } from '@blueprintjs/core';
 
 import { IFieldProps } from './IFieldProps';
 import { StyledRadioButton } from './style';
@@ -15,7 +15,7 @@ import { computed } from 'mobx';
 export interface IRadioButtonFieldProps extends IFieldProps {
   alignIndicator?: Alignment;
   rightElement?: JSX.Element;
-  options: IOptionProps[];
+  options: OptionProps[];
   fill?: boolean;
 }
 
