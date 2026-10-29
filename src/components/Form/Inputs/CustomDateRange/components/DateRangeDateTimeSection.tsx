@@ -9,6 +9,7 @@ import { DateRangeTimeSection } from './DateRangeTimeSection';
 import { DateRangeUtils } from '../utils/DateRangeUtils';
 import { Boundary } from '@blueprintjs/core';
 import { DateRange } from '@blueprintjs/datetime';
+import { useDefaultMaxDate } from '../../useDefaultMaxDate';
 
 export const DateRangeDateTimeSection = (props: IDateRangeDateTimeSection) => {
   const {
@@ -31,6 +32,7 @@ export const DateRangeDateTimeSection = (props: IDateRangeDateTimeSection) => {
     boundary,
     onHoverChange
   } = props;
+  const defaultMaxDate = useDefaultMaxDate();
 
   const {
     startDate,
@@ -60,7 +62,7 @@ export const DateRangeDateTimeSection = (props: IDateRangeDateTimeSection) => {
           fixedWeeks: true
         }}
         boundaryToModify={boundary}
-        maxDate={maxTime}
+        maxDate={maxTime ?? defaultMaxDate}
         minDate={minTime}
         onShortcutChange={onShortcutChange}
         selectedShortcutIndex={selectedShortcutIndex}

@@ -21,6 +21,7 @@ import { FormFieldContainer } from './FormFieldContainer';
 import { IFieldProps } from './IFieldProps';
 /** FieldState */
 import { StyledDateRange } from './style';
+import { useDefaultMaxDate } from './useDefaultMaxDate';
 
 /**
  * Field component. Must be an observer.
@@ -146,6 +147,7 @@ export const VDateRangePicker = observer((props: IInputFieldProps) => {
     onFocusEnd,
     locale = 'en'
   } = props;
+  const defaultMaxDate = useDefaultMaxDate();
 
   if (fieldState) {
     if (required) {
@@ -200,7 +202,7 @@ export const VDateRangePicker = observer((props: IInputFieldProps) => {
           {...{ locale }}
           disabled={disabled}
           minDate={minTime}
-          maxDate={maxTime}
+          maxDate={maxTime ?? defaultMaxDate}
           onChange={changedDate}
           value={getValueField()}
           popoverProps={{

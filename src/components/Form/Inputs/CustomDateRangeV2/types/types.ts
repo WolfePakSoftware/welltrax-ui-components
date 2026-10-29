@@ -11,6 +11,7 @@ export interface IVCustomDateRangeV2 {
   value?: DateRange;
   id?: string;
   onChangeShortcut?: (shortcut: IDateRangeShortcut) => void;
+  maxDate?: Date;
 }
 
 export type FormatType =
