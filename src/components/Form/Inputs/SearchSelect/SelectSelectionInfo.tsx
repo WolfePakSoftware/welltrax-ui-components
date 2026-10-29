@@ -1,4 +1,4 @@
-import { MaybeElement } from '@blueprintjs/core';
+import { Classes, MaybeElement } from '@blueprintjs/core';
 import { IconName } from '@blueprintjs/icons';
 import React from 'react';
 
@@ -18,7 +18,9 @@ export const SelectSelectionInfo = (props: IProps) => {
     if (props.count > 0) {
       return (
         <FlexDiv disabled={props.disabled}>
-          <span className={'bp3-tag  bp3-minimal gsi-selection-info'}>
+          <span
+            className={`${Classes.TAG}  ${Classes.MINIMAL} gsi-selection-info`}
+          >
             {`${props.count} Selected`}
             <span
               className={'gsi-selection-info gsi-selection-info-deselect'}
@@ -28,7 +30,7 @@ export const SelectSelectionInfo = (props: IProps) => {
           </span>
           <CarretIcon
             disabled={props.disabled}
-            className={'bp3-tag  bp3-minimal gsi-selection-caret'}
+            className={`${Classes.TAG}  ${Classes.MINIMAL} gsi-selection-caret`}
             icon={props?.rightIcon ?? 'chevron-down'}
           />
         </FlexDiv>
@@ -38,7 +40,9 @@ export const SelectSelectionInfo = (props: IProps) => {
     if (props?.allowEmpty && !props.multi) {
       return (
         <FlexDiv disabled={props.disabled}>
-          <span className={'bp3-tag  bp3-minimal gsi-selection-info'}>
+          <span
+            className={`${Classes.TAG}  ${Classes.MINIMAL} gsi-selection-info`}
+          >
             <span
               className={'gsi-selection-info gsi-selection-info-deselect'}
               children={'X'}
@@ -47,7 +51,7 @@ export const SelectSelectionInfo = (props: IProps) => {
           </span>
           <CarretIcon
             disabled={props.disabled}
-            className={'bp3-tag  bp3-minimal gsi-selection-caret'}
+            className={`${Classes.TAG}  ${Classes.MINIMAL} gsi-selection-caret`}
             icon={props?.rightIcon ?? 'chevron-down'}
           />
         </FlexDiv>
@@ -57,15 +61,13 @@ export const SelectSelectionInfo = (props: IProps) => {
     return props.multi ? (
       <FlexDiv disabled={props.disabled}>
         <span
-          className={
-            'bp3-tag  bp3-minimal gsi-selection-info gsi-selection-info-no-selection'
-          }
+          className={`${Classes.TAG}  ${Classes.MINIMAL} gsi-selection-info gsi-selection-info-no-selection`}
         >
           No Selection
         </span>
         <CarretIcon
           disabled={props.disabled}
-          className={'bp3-tag  bp3-minimal gsi-selection-caret'}
+          className={`${Classes.TAG}  ${Classes.MINIMAL} gsi-selection-caret`}
           icon={props?.rightIcon ?? 'chevron-down'}
         />
       </FlexDiv>
@@ -73,7 +75,7 @@ export const SelectSelectionInfo = (props: IProps) => {
       <FlexDiv disabled={props.disabled}>
         <CarretIcon
           disabled={props.disabled}
-          className={'bp3-tag  bp3-minimal gsi-selection-caret'}
+          className={`${Classes.TAG}  ${Classes.MINIMAL} gsi-selection-caret`}
           icon={props?.rightIcon ?? 'chevron-down'}
         />
       </FlexDiv>

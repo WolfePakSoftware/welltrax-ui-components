@@ -1,42 +1,44 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 
 import {
   Classes as CoreClasses,
   DISPLAYNAME_PREFIX,
+  IPopoverProps,
   Keys,
   Popover as WPopover,
   Position,
   TagInput,
-  TagInputAddMethod,
-  Utils
+  TagInputAddMethod
 } from '@blueprintjs/core';
+
 import {
   Classes,
-  IMultiSelectProps,
-  IMultiSelectState,
+  MultiSelectProps,
   IQueryListRendererProps,
   QueryList
 } from '@blueprintjs/select';
 import { invoke } from 'lodash';
 
-const Popover: PropsWithChildren<any> = WPopover;
+const Popover = WPopover as React.ComponentType<
+  React.PropsWithChildren<IPopoverProps>
+>;
 
-export interface IVMultiSelectProps<T> extends IMultiSelectProps<T> {
+export interface IVMultiSelectProps<T> extends MultiSelectProps<T> {
   resetOnClose?: boolean;
 }
 
 export class VMultiSelect<T> extends React.PureComponent<
   IVMultiSelectProps<T>,
-  IMultiSelectState
+  { isOpen: boolean }
 > {
   public static displayName = `${DISPLAYNAME_PREFIX}.MultiSelect`;
   public static defaultProps = { fill: false, placeholder: 'Search...' };
 
   public static ofType<T>() {
-    return VMultiSelect as new (props: IMultiSelectProps<T>) => VMultiSelect<T>;
+    return VMultiSelect as new (props: MultiSelectProps<T>) => VMultiSelect<T>;
   }
 
-  public state: IMultiSelectState = {
+  public state: { isOpen: boolean } = {
     isOpen: (this.props.popoverProps && this.props.popoverProps.isOpen) || false
   };
 
@@ -134,7 +136,7 @@ export class VMultiSelect<T> extends React.PureComponent<
     evt?: React.SyntheticEvent<HTMLElement>
   ) => {
     this.input?.focus();
-    Utils.safeInvoke(this.props.onItemSelect, item, evt);
+    this.props.onItemSelect?.(item, evt);
   };
 
   private handleQueryChange = (
@@ -142,7 +144,7 @@ export class VMultiSelect<T> extends React.PureComponent<
     evt?: React.ChangeEvent<HTMLInputElement>
   ) => {
     this.setState({ isOpen: query.length > 0 || !this.props.openOnKeyDown });
-    Utils.safeInvoke(this.props.onQueryChange, query, evt);
+    this.props.onQueryChange?.(query, evt);
   };
 
   private handlePopoverInteraction = (nextOpenState: boolean) =>
@@ -152,11 +154,7 @@ export class VMultiSelect<T> extends React.PureComponent<
       } else if (!this.props.openOnKeyDown) {
         this.setState({ isOpen: true });
       }
-      Utils.safeInvokeMember(
-        this.props.popoverProps,
-        'onInteraction',
-        nextOpenState
-      );
+      this.props.popoverProps?.onInteraction?.(nextOpenState);
     });
 
   private handlePopoverOpened = (node: HTMLElement) => {
@@ -164,7 +162,7 @@ export class VMultiSelect<T> extends React.PureComponent<
     if (this.props.resetOnClose) {
       this.queryList?.setQuery('', true);
     }
-    Utils.safeInvokeMember(this.props.popoverProps, 'onOpened', node);
+    this.props.popoverProps?.onOpened?.(node);
   };
 
   private getTagInputKeyDownHandler = (
@@ -189,7 +187,7 @@ export class VMultiSelect<T> extends React.PureComponent<
       (e.target as HTMLElement).closest(`.${CoreClasses.TAG_REMOVE}`) != null;
 
     if (this.state.isOpen && !isTargetingTagRemoveButton) {
-      Utils.safeInvoke(handleQueryListKeyDown, e);
+      handleQueryListKeyDown?.(e);
     }
   };
 
@@ -200,7 +198,7 @@ export class VMultiSelect<T> extends React.PureComponent<
       Classes.MULTISELECT_TAG_INPUT_INPUT
     );
     if (this.state.isOpen && isTargetingInput) {
-      Utils.safeInvoke(handleQueryListKeyUp, e);
+      handleQueryListKeyUp?.(e);
     }
   };
 }

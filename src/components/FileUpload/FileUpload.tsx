@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState, PropsWithChildren } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   AnchorButton,
+  IPopoverProps,
   MenuItem,
   Position,
   Popover as WPopover
@@ -8,7 +9,9 @@ import {
 import ConfirmAndEditFile from './ConfirmAndEditFile';
 import { OptionsMenu } from './styles';
 
-const Popover: PropsWithChildren<any> = WPopover;
+const Popover = WPopover as React.ComponentType<
+  React.PropsWithChildren<IPopoverProps>
+>;
 export interface FileUploadProps {
   handleFileUpload?: any;
   handleFileDelete?: any;

@@ -6,8 +6,10 @@ import {
   MaybeElement,
   Popover as WPopover,
   PopoverInteractionKind,
-  Position
+  Position,
+  IPopoverProps
 } from '@blueprintjs/core';
+import { Classes as SelectClasses } from '@blueprintjs/select';
 import { observer } from 'mobx-react';
 import React, { FC, PropsWithChildren } from 'react';
 import { IItem } from '../../types';
@@ -62,7 +64,9 @@ export type VSearchSelectFieldAsyncProps = Pick<
   sort?: 'asc' | 'desc' | undefined;
 };
 
-const Popover: PropsWithChildren<any> = WPopover;
+const Popover = WPopover as React.ComponentType<
+  React.PropsWithChildren<IPopoverProps>
+>;
 
 export const VSearchSelectFieldAsync: FC<VSearchSelectFieldAsyncProps> = observer(
   ({
@@ -152,7 +156,7 @@ export const VSearchSelectFieldAsync: FC<VSearchSelectFieldAsyncProps> = observe
           <Popover
             {...{ isOpen }}
             targetClassName={'gsi-select-popover'}
-            popoverClassName={'bp3-select-popover gsi-select-popover'}
+            popoverClassName={`${SelectClasses.SELECT_POPOVER} gsi-select-popover`}
             enforceFocus={false}
             autoFocus={false}
             canEscapeKeyClose={true}

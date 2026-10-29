@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { VSelectionList } from '../SelectionList';
-import { Button } from '@blueprintjs/core';
+import { Button, Classes } from '@blueprintjs/core';
 import { Scrollbar } from 'react-scrollbars-custom';
 import { PropsWithChildren } from 'react';
 
@@ -62,7 +62,7 @@ export const CentralFlexCol = styled(FlexCol)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  & button.bp3-button.bp3-large {
+  & button.${Classes.BUTTON}.${Classes.LARGE} {
     margin-bottom: 0px;
     position: relative;
     padding: 0 15px;

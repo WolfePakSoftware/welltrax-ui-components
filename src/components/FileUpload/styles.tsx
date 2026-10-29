@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { PropsWithChildren } from 'react';
-import { Dialog } from '@blueprintjs/core';
+import { Classes, Dialog } from '@blueprintjs/core';
 import { NoFocusMenu } from '../SelectionList/style';
 
 export const OptionsMenu = styled(NoFocusMenu)`
@@ -25,7 +25,7 @@ export const FileNameContainer = styled.div`
   width: 320px;
   display: flex;
   justify-content: space-between;
-  & .bp3-form-group {
+  & .${Classes.FORM_GROUP} {
     width: 100%;
   }
 `;

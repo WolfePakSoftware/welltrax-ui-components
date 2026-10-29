@@ -2,13 +2,16 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 /** Blueprint */
 import {
+  Classes,
   IconName,
   InputGroup,
   Intent,
+  IPopoverProps,
   Menu,
   MenuItem,
   Popover as WPopover
 } from '@blueprintjs/core';
+
 /** FieldState */
 import { StyledInput } from './style';
 import { IFieldProps } from './IFieldProps';
@@ -18,7 +21,9 @@ import { computed } from 'mobx';
 import styled from 'styled-components';
 import { IItemMultiple } from './SelectMultipleField';
 
-const Popover: React.PropsWithChildren<any> = WPopover;
+const Popover = WPopover as React.ComponentType<
+  React.PropsWithChildren<IPopoverProps>
+>;
 /**
  * Field component. Must be an observer.
  */
@@ -291,9 +296,9 @@ export class VInputFieldWithSuggestions extends React.Component<
 }
 
 const StyledPopoverContainer = styled.div`
-  & .bp3-popover-wrapper {
+  & .${Classes.POPOVER_WRAPPER} {
     width: 100%;
-    & .bp3-popover-target {
+    & .${Classes.POPOVER_TARGET} {
       width: 100%;
     }
   }
