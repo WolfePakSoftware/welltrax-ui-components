@@ -16,7 +16,8 @@ import {
   ItemListRenderer,
   ItemPredicate,
   ItemRenderer,
-  Select
+  Select,
+  SelectProps
 } from '@blueprintjs/select';
 
 import '@blueprintjs/select/lib/css/blueprint-select.css';
@@ -73,7 +74,9 @@ export interface IItemMultiple {
 
 const clearToken = `$empty#Option#first#item_unique_`;
 
-const ItemSelect: PropsWithChildren<any> = Select.ofType<IItemRenderer>();
+const ItemSelect = Select.ofType<IItemRenderer>() as React.ComponentClass<
+  React.PropsWithChildren<SelectProps<IItemRenderer>>
+>;
 
 const filterItem: ItemPredicate<IItemRenderer> = (query, value) => {
   return (

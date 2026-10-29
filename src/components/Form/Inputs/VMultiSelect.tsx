@@ -11,9 +11,6 @@ import {
   TagInputAddMethod
 } from '@blueprintjs/core';
 
-const Popover = WPopover as React.ComponentType<
-  React.PropsWithChildren<IPopoverProps>
->;
 import {
   Classes,
   MultiSelectProps,
@@ -21,6 +18,10 @@ import {
   QueryList
 } from '@blueprintjs/select';
 import { invoke } from 'lodash';
+
+const Popover = WPopover as React.ComponentType<
+  React.PropsWithChildren<IPopoverProps>
+>;
 
 export interface IVMultiSelectProps<T> extends MultiSelectProps<T> {
   resetOnClose?: boolean;

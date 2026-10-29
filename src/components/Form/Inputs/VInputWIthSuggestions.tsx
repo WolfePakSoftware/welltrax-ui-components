@@ -12,9 +12,6 @@ import {
   Popover as WPopover
 } from '@blueprintjs/core';
 
-const Popover = WPopover as React.ComponentType<
-  React.PropsWithChildren<IPopoverProps>
->;
 /** FieldState */
 import { StyledInput } from './style';
 import { IFieldProps } from './IFieldProps';
@@ -23,6 +20,10 @@ import { Validators } from '../Validators';
 import { computed } from 'mobx';
 import styled from 'styled-components';
 import { IItemMultiple } from './SelectMultipleField';
+
+const Popover = WPopover as React.ComponentType<
+  React.PropsWithChildren<IPopoverProps>
+>;
 /**
  * Field component. Must be an observer.
  */

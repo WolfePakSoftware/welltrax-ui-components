@@ -6,7 +6,9 @@ import {
   Keys,
   PopoverInteractionKind,
   Popover as WPopover,
-  Tooltip as WTooltip
+  Tooltip as WTooltip,
+  IPopoverProps,
+  TooltipProps
 } from '@blueprintjs/core';
 import { Classes as SelectClasses } from '@blueprintjs/select';
 
@@ -17,8 +19,12 @@ import { observer, useLocalStore } from 'mobx-react';
 import { SearchSelectStore } from './SearchSelectStore';
 import { StyledUl } from './styled';
 
-const Tooltip: PropsWithChildren<any> = WTooltip;
-const Popover: PropsWithChildren<any> = WPopover;
+const Tooltip = WTooltip as React.ComponentType<
+  React.PropsWithChildren<TooltipProps>
+>;
+const Popover = WPopover as React.ComponentType<
+  React.PropsWithChildren<IPopoverProps>
+>;
 
 type OptionItem = IItem & { additionalSearchText?: string };
 

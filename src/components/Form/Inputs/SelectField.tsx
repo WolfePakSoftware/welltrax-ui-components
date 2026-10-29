@@ -15,7 +15,8 @@ import {
   ItemListRenderer,
   ItemPredicate,
   ItemRenderer,
-  Select
+  Select,
+  SelectProps
 } from '@blueprintjs/select';
 import '@blueprintjs/select/lib/css/blueprint-select.css';
 import { FieldState } from 'formstate';
@@ -70,7 +71,9 @@ interface IState {
   query: string | null;
 }
 
-const ItemSelect: PropsWithChildren<any> = Select.ofType<IItem>();
+const ItemSelect = Select.ofType<IItem>() as React.ComponentClass<
+  React.PropsWithChildren<SelectProps<IItem>>
+>;
 
 const filterItem: ItemPredicate<IItem> = (query, item) => {
   return (

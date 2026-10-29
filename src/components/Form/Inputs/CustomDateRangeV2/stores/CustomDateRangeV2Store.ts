@@ -2,9 +2,12 @@ import { action, observable } from 'mobx';
 import moment from 'moment';
 import { FieldState } from 'formstate';
 import { FormatType, IDateRangeShortcut } from '../types/types';
-import { DateRange, DateRangeInput } from '@blueprintjs/datetime';
+import {
+  Classes as DatetimeClasses,
+  DateRange,
+  DateRangeInput
+} from '@blueprintjs/datetime';
 import { Classes as CoreClasses } from '@blueprintjs/core';
-import { Classes as DatetimeClasses } from '@blueprintjs/datetime';
 
 export class CustomDateRangeV2Store {
   @observable range: DateRange = [null, null];
