@@ -8,7 +8,7 @@ It's an extension of the blueprint framework. It has other components that are n
 - VBadge - Native component, not libraries.
 - VCardPanel - Configurable Card, uses Card @blueprintjs/core.
 - VColorPicker - Color Picker Component uses the library react-color.
-- VDragAndDropList - Drag and Drop List Component use the library react-beautiful-dnd.
+- VDragAndDropList - Drag and Drop List Component use the library @hello-pangea/dnd.
 - VPaginator - Native Paginator Component, not libraries.
 - VProgressLabel - Native Component, not libraries. Useful to represent multiples progress bar.
 - VSelectionList - Native Component.
