@@ -15,6 +15,8 @@ const lists = (): IDNDList[] => [
   { id: 'selected', label: 'Selected', list: [] }
 ];
 
+afterEach(() => jest.useRealTimers());
+
 it('reorders a field with the keyboard and reports the move', () => {
   jest.useFakeTimers();
   const onDragAndDrop = jest.fn();
@@ -39,5 +41,4 @@ it('reorders a field with the keyboard and reports the move', () => {
       draggableId: 'f1'
     })
   );
-  jest.useRealTimers();
 });
