@@ -66,7 +66,6 @@ export class CustomDateRangeV2Store {
     defaultEndTimeWithEndDay?: boolean
   ) => (val: DateRange) => {
     this.removePopoverDismiss();
-    console.log(val);
     if (
       defaultEndTimeWithEndDay &&
       this.isChangedByDayPicker &&
@@ -79,10 +78,6 @@ export class CustomDateRangeV2Store {
     }
     fieldState?.onChange(val);
     onChange?.(val);
-    this.componentRef?.startInputElement?.setAttribute?.(
-      'value',
-      'esto es la polla chaval'
-    );
     this.setRange(val);
   };
 
