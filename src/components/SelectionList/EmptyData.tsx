@@ -1,6 +1,5 @@
 import React from 'react';
-import { Icon, IconName } from '@blueprintjs/core';
-import { MaybeElement } from '@blueprintjs/core/src/common/props';
+import { Classes, Icon, IconName, MaybeElement } from '@blueprintjs/core';
 
 interface ISettingEmptyData {
   textSize?: number;
@@ -96,7 +95,7 @@ export const EmptyData = (props: IEmptyData) => {
           {renderIcon}
           <p
             style={{ color, fontSize: textSize, fontWeight: 400, width: 100 }}
-            className="bp3-heading"
+            className={Classes.HEADING}
           >
             {text}
           </p>

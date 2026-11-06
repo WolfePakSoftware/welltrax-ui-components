@@ -5,7 +5,7 @@ import {
   Button,
   IconName,
   Intent,
-  ITagProps,
+  TagProps,
   TagInput
 } from '@blueprintjs/core';
 import { IFieldProps } from './IFieldProps';
@@ -28,7 +28,7 @@ export interface TagValidation {
 
 export interface ITagFieldProps extends IFieldProps {
   leftIcon?: IconName;
-  tagProps?: ITagProps | ((value: React.ReactNode, index: number) => ITagProps);
+  tagProps?: TagProps | ((value: React.ReactNode, index: number) => TagProps);
   fill?: boolean;
   limit?: number;
   separator?: string | RegExp;

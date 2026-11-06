@@ -1,4 +1,4 @@
-import { FormGroup, Intent } from '@blueprintjs/core';
+import { Classes, FormGroup, Intent } from '@blueprintjs/core';
 import { DateInput } from '@blueprintjs/datetime';
 import { PropsWithChildren } from 'react';
 import MaskedInput from 'react-text-mask';
@@ -59,7 +59,7 @@ export const StyledFormGroup = styled<PropsWithChildren<any>>(FormGroup)`
       }
     }
     return `
-        & .bp3-form-content {
+        & .${Classes.FORM_CONTENT} {
             display: flex;
             flex-direction:${
               inline
@@ -98,7 +98,7 @@ export const StyledFormGroup = styled<PropsWithChildren<any>>(FormGroup)`
                 ${
                   fill
                     ? `width: ${100}%;
-                & .bp3-popover-target {
+                & .${Classes.POPOVER_TARGET} {
                   width: 100%;
                 }
                 `
@@ -126,7 +126,7 @@ export const StyledInput = styled<PropsWithChildren<any>>(StyledFormGroup)`
       font-size: 12px;
       padding: 0 2px;
     }
-    & .bp3-input-group {
+    & .${Classes.INPUT_GROUP} {
       width: 100%;
       & input {
         width: 100%;
@@ -137,7 +137,7 @@ export const StyledInput = styled<PropsWithChildren<any>>(StyledFormGroup)`
 
 export const StyledSelect = styled(StyledFormGroup)`
   .gsi-input-and-error-container {
-    & .bp3-input-group {
+    & .${Classes.INPUT_GROUP} {
       width: 100%;
       & select {
         width: 100%;
@@ -159,9 +159,9 @@ export const StyledNumericInput = styled<PropsWithChildren<any>>(
       font-size: 12px;
       padding: 0 2px;
     }
-    & .bp3-control-group.bp3-numeric-input {
+    & .${Classes.CONTROL_GROUP}.${Classes.NUMERIC_INPUT} {
       width: 100%;
-      & .bp3-input-group {
+      & .${Classes.INPUT_GROUP} {
         width: 100% !important;
       }
     }
@@ -196,8 +196,8 @@ export const StyledCheckBoxInput = styled<PropsWithChildren<any>>(
   }
   .gsi-form-field-container {
     & .gsi-input-and-error-container {
-      & .bp3-control.bp3-checkbox,
-      .bp3-inline.bp3-align-right {
+      & .${Classes.CONTROL}.${Classes.CHECKBOX},
+      .${Classes.INLINE}.${Classes.ALIGN_RIGHT} {
         ${(props: IStyledFieldProps) =>
           props.checkBoxAtLeft ? '' : `padding: 0!important;`}
         width: 0 !important
@@ -212,7 +212,7 @@ export const StyledCheckBoxInput = styled<PropsWithChildren<any>>(
               : 'flex-start';
           return `align-self: ${inputOrientation};`;
         }}
-        & span.bp3-control-indicator {
+        & span.${Classes.CONTROL_INDICATOR} {
           margin-left: ${(props: IStyledFieldProps) =>
             props.checkBoxAtLeft &&
             props.layer &&
@@ -228,7 +228,7 @@ export const StyledCheckBoxInput = styled<PropsWithChildren<any>>(
 
 export const StyledTagsInput = styled<PropsWithChildren<any>>(StyledFormGroup)`
   .gsi-input-and-error-container {
-    & .bp3-input.bp3-tag-input {
+    & .${Classes.INPUT}.${Classes.TAG_INPUT} {
       width: 100%;
     }
   }
@@ -246,7 +246,7 @@ export const StyledDateRange = styled<PropsWithChildren<any>>(StyledFormGroup)`
       padding: 0 2px;
     }
   }
-  .bp3-input-group {
+  .${Classes.INPUT_GROUP} {
     width: 50%;
   }
 `;
@@ -269,7 +269,7 @@ export const StyledSlider = styled<PropsWithChildren<any>>(StyledFormGroup)`
       props.fill
         ? `width: calc(100% - 21px)!important;`
         : `max-width: 200px!important;`}
-    & .bp3-slider {
+    & .${Classes.SLIDER} {
       width: 100%;
     }
   }
@@ -289,9 +289,9 @@ export const StyledPopOverWrapper = styled<PropsWithChildren<any>>(
       font-size: 12px;
       padding: 0 2px;
     }
-    & .bp3-popover-wrapper {
+    & .${Classes.POPOVER_WRAPPER} {
       width: 100%;
-      & .bp3-popover-target {
+      & .${Classes.POPOVER_TARGET} {
         width: 100%;
         div {
           & > button:not(.crossButton) {
@@ -305,7 +305,7 @@ export const StyledPopOverWrapper = styled<PropsWithChildren<any>>(
               outline: rgba(16, 22, 26, 0.4) auto 2px;
               outline-offset: 2px;
             }
-            & span.bp3-button-text {
+            & span.${Classes.BUTTON_TEXT} {
               overflow: hidden;
               white-space: nowrap;
               text-overflow: ellipsis;
@@ -331,7 +331,7 @@ export const StyledPopOverWrapper = styled<PropsWithChildren<any>>(
 export const StyledRadioButton = styled<PropsWithChildren<any>>(
   StyledFormGroup
 )`
-  & .bp3-form-content {
+  & .${Classes.FORM_CONTENT} {
     & label.field-label {
       & .gsi-form-field-container {
         & div {
@@ -347,19 +347,19 @@ export const StyledRadioButton = styled<PropsWithChildren<any>>(
                 : 'flex-start';
             return `justify-content: ${inputOrientation};`;
           }}
-          & .bp3-control.bp3-radio.bp3-inline {
+          & .${Classes.CONTROL}.${Classes.RADIO}.${Classes.INLINE} {
             padding: 0 26px !important;
             width: auto !important;
             margin-right: 10px !important;
             line-height: 27px;
-            .bp3-control-indicator {
+            .${Classes.CONTROL_INDICATOR} {
               margin-left: -26px;
               margin-top: 0;
             }
           }
         }
         ,
-        & .bp3-control.bp3-inline {
+        & .${Classes.CONTROL}.${Classes.INLINE} {
           margin-right: 10px !important;
         }
       }
@@ -399,7 +399,7 @@ export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
     margin: 1px !important;
   }
   @-moz-document url-prefix() {
-    & .bp3-html-select.bp3-minimal select {
+    & .${Classes.HTML_SELECT}.${Classes.MINIMAL} select {
       font-size: 12px;
     }
   }

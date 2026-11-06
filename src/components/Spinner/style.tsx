@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Classes } from '@blueprintjs/core';
 
 interface ISpinnerContainer {
   color?: string;
@@ -23,7 +24,7 @@ export const SpinnerContainer = styled.div`
   ${(props: ISpinnerContainer) =>
     props.color &&
     css`
-      .bp3-spinner .bp3-spinner-head {
+      .${Classes.SPINNER} .${Classes.SPINNER_HEAD} {
         stroke: ${props.color};
       }
     `};

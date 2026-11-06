@@ -7,12 +7,14 @@ import {
   ContainerTabsPanel,
   TabsSpaceFiller
 } from './style';
-import { Alert as WAlert } from '@blueprintjs/core';
+import { Alert as WAlert, AlertProps } from '@blueprintjs/core';
 import CarouselMultiple from '../Scroll/CarouselMultiple/VCarouselMultiple';
 import ItemSC from '../Scroll/CarouselMultiple/components/Item';
 import { find } from 'lodash';
 
-const Alert: PropsWithChildren<any> = WAlert;
+const Alert = WAlert as React.ComponentType<
+  React.PropsWithChildren<AlertProps>
+>;
 
 export const VTabsPanel = (props: ITabsPanelProps) => {
   const getContent = (key: any = props.tabList[0].key) => {

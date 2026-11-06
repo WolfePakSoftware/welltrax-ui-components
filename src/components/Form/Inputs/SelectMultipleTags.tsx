@@ -4,7 +4,7 @@ import {
   HTMLInputProps,
   IconName,
   Intent,
-  ITagProps,
+  TagProps,
   MenuItem
 } from '@blueprintjs/core';
 import { ItemPredicate, ItemRenderer } from '@blueprintjs/select';
@@ -28,7 +28,7 @@ export interface ISelectMultipleTags extends IFieldProps {
   defaultText?: string;
   fixedInputWidthPx?: number;
   iconOnly?: boolean;
-  tagProps?: ITagProps | ((value: React.ReactNode, index: number) => ITagProps);
+  tagProps?: TagProps | ((value: React.ReactNode, index: number) => TagProps);
   inputRef?: (input: HTMLInputElement | null) => void;
   inputProps?: HTMLInputProps;
   resetOnClose?: boolean;

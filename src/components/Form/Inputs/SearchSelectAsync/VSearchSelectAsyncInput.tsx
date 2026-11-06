@@ -1,4 +1,4 @@
-import { Button, Spinner } from '@blueprintjs/core';
+import { Button, Spinner, SpinnerSize } from '@blueprintjs/core';
 import React, { forwardRef, useContext, useState } from 'react';
 import { useThrottleDebounce } from '../../../CustomHooks';
 import { VInputField } from '../InputField';
@@ -51,7 +51,7 @@ export const VSearchSelectAsyncInput = forwardRef(
         placeholder={placeholder ?? 'Search...'}
         rightElement={
           loading ? (
-            <Spinner size={Spinner.SIZE_SMALL} />
+            <Spinner size={SpinnerSize.SMALL} />
           ) : (
             <Button icon={'filter-remove'} onClick={onClear} minimal small />
           )

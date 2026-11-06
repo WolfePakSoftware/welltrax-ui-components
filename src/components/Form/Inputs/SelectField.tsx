@@ -15,7 +15,8 @@ import {
   ItemListRenderer,
   ItemPredicate,
   ItemRenderer,
-  Select
+  Select,
+  SelectProps
 } from '@blueprintjs/select';
 import '@blueprintjs/select/lib/css/blueprint-select.css';
 import { FieldState } from 'formstate';
@@ -70,7 +71,9 @@ interface IState {
   query: string | null;
 }
 
-const ItemSelect: PropsWithChildren<any> = Select.ofType<IItem>();
+const ItemSelect = Select.ofType<IItem>() as React.ComponentClass<
+  React.PropsWithChildren<SelectProps<IItem>>
+>;
 
 const filterItem: ItemPredicate<IItem> = (query, item) => {
   return (
@@ -400,7 +403,7 @@ export class VSelectField extends React.Component<ISelectFieldProps, IState> {
             {iconOnly ? (
               <ButtonGroup>
                 <Button
-                  className={minimal ? 'bp3-minimal' : ''}
+                  className={minimal ? Classes.MINIMAL : ''}
                   style={{
                     justifyContent: 'center',
                     color: this.props.color && this.props.color
@@ -420,7 +423,7 @@ export class VSelectField extends React.Component<ISelectFieldProps, IState> {
                 onMouseLeave={() => {
                   this.showClear = false;
                 }}
-                className={minimal ? 'bp3-minimal' : ''}
+                className={minimal ? Classes.MINIMAL : ''}
                 {...{
                   icon,
                   disabled

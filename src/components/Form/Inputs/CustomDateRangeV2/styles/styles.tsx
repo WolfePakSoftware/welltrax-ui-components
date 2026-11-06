@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { DateRangeInput } from '@blueprintjs/datetime';
+import { Classes, DateRangeInput } from '@blueprintjs/datetime';
 import { PropsWithChildren } from 'react';
 
 interface IStyledDateRangeProps {
@@ -7,7 +7,7 @@ interface IStyledDateRangeProps {
 }
 
 export const StyledDateRange = styled<PropsWithChildren<any>>(DateRangeInput)`
-  & ul.bp3-daterangepicker-shortcuts {
+  & ul.${Classes.DATERANGEPICKER_SHORTCUTS} {
     & li {
       ${(props: IStyledDateRangeProps) =>
         props.isUserDefined &&

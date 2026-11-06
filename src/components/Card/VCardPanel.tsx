@@ -2,7 +2,8 @@ import {
   Collapse as WCollapse,
   Elevation,
   Icon,
-  IconName
+  IconName,
+  CollapseProps
 } from '@blueprintjs/core';
 import {
   VCard,
@@ -52,7 +53,9 @@ interface PanelState {
   isOpen: boolean;
 }
 
-const Collapse: PropsWithChildren<any> = WCollapse;
+const Collapse = WCollapse as React.ComponentType<
+  React.PropsWithChildren<CollapseProps>
+>;
 export class VCardPanel extends Component<StyledCardProps, PanelState> {
   constructor(props: StyledCardProps) {
     super(props);

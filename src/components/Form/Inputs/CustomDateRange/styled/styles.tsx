@@ -3,6 +3,7 @@ import { VInputField } from '../../InputField';
 import { DateRangePicker } from '@blueprintjs/datetime';
 import { propagateChangeConfirmed } from 'mobx/lib/core/observable';
 import { PropsWithChildren } from 'react';
+import { Classes } from '@blueprintjs/core';
 
 export const DateRangeInputSectionStyled = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ export const DateRangeTimeSectionDateTimeBody = styled.div`
 
 export const VInputFieldStyled = styled<PropsWithChildren<any>>(VInputField)`
   &
-    > div.bp3-form-content
+    > div.${Classes.FORM_CONTENT}
     > div.gsi-form-field-container
     > div.gsi-input-and-error-container {
     max-width: none;

@@ -1,10 +1,10 @@
 import React, { Component, PropsWithChildren } from 'react';
 
-import { Icon, Tab, TabId, Tabs as WTabs } from '@blueprintjs/core';
+import { Icon, Tab, TabId, Tabs as WTabs, TabsProps } from '@blueprintjs/core';
 import { ITabsMenuProps, ITabsMenuState } from './types';
 import { labelIcon, TabIcon, TabsStyle } from './style';
 
-const Tabs: PropsWithChildren<any> = WTabs;
+const Tabs = WTabs as React.ComponentType<React.PropsWithChildren<TabsProps>>;
 
 export class VTabsMenu extends Component<ITabsMenuProps, ITabsMenuState> {
   constructor(props: ITabsMenuProps) {

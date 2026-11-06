@@ -1,16 +1,14 @@
 import { observer } from 'mobx-react';
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 /** Blueprint */
 /** FieldState */
-import { Alignment, Switch as WSwitch, Intent } from '@blueprintjs/core';
+import { Alignment, Switch, Intent } from '@blueprintjs/core';
 
 import { IFieldProps } from './IFieldProps';
 import { StyledCheckBoxInput } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
-
-const Switch: PropsWithChildren<any> = WSwitch;
 /**
  * Field Props
  */
@@ -21,7 +19,7 @@ export interface ISwitchFieldProps extends IFieldProps {
   innerLabel?: string;
   innerLabelChecked?: string;
   requiredJustVisual?: boolean;
-  labelElement?: Element;
+  labelElement?: React.ReactNode;
 }
 
 /**
