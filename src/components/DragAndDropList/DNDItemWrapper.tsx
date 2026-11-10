@@ -1,7 +1,7 @@
 import { CustomDraggableItem } from './CustomDraggableItem';
 import React, { CSSProperties } from 'react';
 import { DNDItem, DNDItemBody } from './style';
-import { DraggableProvided } from 'react-beautiful-dnd';
+import { DraggableProvided } from '@hello-pangea/dnd';
 import { IDNDItem, IDNDList, SelectedItemHelpButtonList } from './types';
 import { useClickPreventionOnDoubleClick } from '../CustomHooks';
 
@@ -63,7 +63,6 @@ export const DNDItemWrapper = (props: DNDItemWrapperProps) => {
           draggableId={item.value}
           handleHelpButtonClicked={handleHelpButtonClicked}
         />
-        {providedDraggable.placeholder}
       </DNDItem>
     </DNDItemBody>
   );

@@ -3,11 +3,11 @@
 import { Button } from '@blueprintjs/core';
 import { find } from 'lodash';
 import { observer } from 'mobx-react';
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  DragDropContext as WDragDropContext,
-  Draggable as WDraggable,
-  Droppable as WDroppable,
+  DragDropContext,
+  Draggable,
+  Droppable,
   DraggableLocation,
   DraggableProvided,
   DraggableStateSnapshot,
@@ -16,7 +16,7 @@ import {
   DroppableStateSnapshot,
   DropResult,
   ResponderProvided
-} from 'react-beautiful-dnd';
+} from '@hello-pangea/dnd';
 import { VCardPanel } from '../Card';
 import { EmptyData } from '../SelectionList/EmptyData';
 import { VSpinner } from '../Spinner';
@@ -46,10 +46,6 @@ const reorder = (
 
   return result;
 };
-
-const DragDropContext: PropsWithChildren<any> = WDragDropContext;
-const Draggable: PropsWithChildren<any> = WDraggable;
-const Droppable: PropsWithChildren<any> = WDroppable;
 
 /**
  * Moves an item from one list to another list.
