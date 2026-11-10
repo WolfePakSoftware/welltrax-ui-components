@@ -8,6 +8,7 @@ import { StyledFormGroup } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 
 /**
  * Field Props
@@ -26,6 +27,7 @@ export interface IBasicSelectFieldProps extends IFieldProps {
 export class VBasicSelectField extends React.Component<IBasicSelectFieldProps> {
   constructor(props: IBasicSelectFieldProps) {
     super(props);
+    observeDecorators(this);
   }
 
   public render() {

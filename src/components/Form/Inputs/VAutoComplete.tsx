@@ -24,6 +24,7 @@ import { StyledPopOverWrapper } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed, observable } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 import styled from 'styled-components';
 import { NoFocusMenu } from '../../SelectionList/style';
 
@@ -85,6 +86,7 @@ export class VAutoComplete extends React.Component<ISelectFieldProps, IState> {
   constructor(props: ISelectFieldProps) {
     super(props);
     this.showClear = false;
+    observeDecorators(this);
   }
 
   renderItem: ItemRenderer<IItem> = (item, { handleClick, modifiers }) => {

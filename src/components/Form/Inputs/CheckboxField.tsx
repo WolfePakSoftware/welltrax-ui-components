@@ -9,6 +9,7 @@ import { StyledCheckBoxInput } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 
 /**
  * Field Props
@@ -29,6 +30,7 @@ export interface ICheckBoxFieldProps extends IFieldProps {
 export class VCheckboxField extends React.Component<ICheckBoxFieldProps> {
   constructor(props: ICheckBoxFieldProps) {
     super(props);
+    observeDecorators(this);
   }
 
   public render() {

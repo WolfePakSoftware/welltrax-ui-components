@@ -8,6 +8,7 @@ import { StyledInput, StyledMaskInput } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 import { ILayer } from './ILayer';
 import { FieldState } from 'formstate';
 import {
@@ -52,6 +53,7 @@ export class VMaskField extends React.Component<IMaskInputProps> {
     super(props);
     this.onChange = this.onChange.bind(this);
     this.inputRef = React.createRef();
+    observeDecorators(this);
   }
 
   public render() {
