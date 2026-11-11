@@ -22,6 +22,7 @@ import '@blueprintjs/select/lib/css/blueprint-select.css';
 import { FieldState } from 'formstate';
 import { orderBy, uniqueId } from 'lodash';
 import { action, computed, observable } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 import { observer } from 'mobx-react';
 import React, { PropsWithChildren } from 'react';
 import { VSpinner } from '../../Spinner';
@@ -101,6 +102,7 @@ export class VSelectField extends React.Component<ISelectFieldProps, IState> {
       query: ''
     };
     this.ref = React.createRef();
+    observeDecorators(this);
   }
 
   @action setRef = (ref: any) => {

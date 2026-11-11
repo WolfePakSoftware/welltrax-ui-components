@@ -1,4 +1,5 @@
 import { action, observable } from 'mobx';
+import { observeDecorators } from '../../../observeDecorators';
 import moment from 'moment';
 import { FieldState } from 'formstate';
 import { FormatType, IDateRangeShortcut } from '../types/types';
@@ -18,6 +19,7 @@ export class CustomDateRangeV2Store {
 
   constructor(onChangeShortcut?: (shortcut: IDateRangeShortcut) => void) {
     this.onChangeShortcut = onChangeShortcut;
+    observeDecorators(this);
   }
 
   @action setComponentRef = (ref: DateRangeInput) => {
