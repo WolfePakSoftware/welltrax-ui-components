@@ -8,6 +8,7 @@ import { StyledTextArea } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 /** FieldState */
 
 /**
@@ -44,6 +45,7 @@ export class VTextAreaField extends React.Component<
       end: 1
     };
     this.inputRef = React.createRef();
+    observeDecorators(this);
   }
 
   public render() {

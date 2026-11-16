@@ -9,6 +9,7 @@ import { StyledSlider } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 import { isNumber } from 'lodash';
 
 /**
@@ -31,6 +32,7 @@ export interface ISliderFieldProps extends IFieldProps {
 export class VBasicSliderField extends React.Component<ISliderFieldProps> {
   constructor(props: ISliderFieldProps) {
     super(props);
+    observeDecorators(this);
   }
 
   public render() {

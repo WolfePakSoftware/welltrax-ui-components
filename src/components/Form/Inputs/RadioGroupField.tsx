@@ -8,6 +8,7 @@ import { StyledRadioButton } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 
 /**
  * Field Props
@@ -27,6 +28,7 @@ export interface IRadioButtonFieldProps extends IFieldProps {
 export class VRadioGroupField extends React.Component<IRadioButtonFieldProps> {
   constructor(props: IRadioButtonFieldProps) {
     super(props);
+    observeDecorators(this);
   }
 
   public render() {

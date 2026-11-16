@@ -8,6 +8,7 @@ import { StyledNumericInput } from './style';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 import { isFinite, isNumber } from 'lodash';
 
 /**
@@ -32,6 +33,7 @@ export interface INumericFieldProps extends IFieldProps {
 export class VNumericField extends React.Component<INumericFieldProps> {
   constructor(props: INumericFieldProps) {
     super(props);
+    observeDecorators(this);
   }
 
   public render() {

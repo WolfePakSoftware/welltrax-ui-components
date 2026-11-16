@@ -8,6 +8,7 @@ import { IFieldProps } from './IFieldProps';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 
 /**
  * Field component. Must be an observer.
@@ -40,6 +41,7 @@ export class VInputField extends React.Component<IInputFieldProps, IState> {
       end: 1
     };
     this.inputRef = props.inputRef ? props.inputRef : React.createRef();
+    observeDecorators(this);
   }
 
   public render() {

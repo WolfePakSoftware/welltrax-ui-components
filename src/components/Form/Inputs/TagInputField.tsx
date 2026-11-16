@@ -16,6 +16,7 @@ import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { showToastNotification } from '../../ToastNotification';
 import { action, computed, observable } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 import { isArray } from 'lodash';
 
 /**
@@ -43,11 +44,12 @@ export interface ITagFieldProps extends IFieldProps {
 export class VTagInputField extends React.Component<ITagFieldProps> {
   private innerSeparator = /[,\n\r]/;
   @observable inputValue: any;
-  @observable onPasteCapture: any;
+  @observable onPasteCapture: any = undefined;
   inputRef: any;
   constructor(props: ITagFieldProps) {
     super(props);
     this.inputValue = '';
+    observeDecorators(this);
   }
 
   setRef = (ref: any) => {

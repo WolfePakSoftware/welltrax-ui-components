@@ -1,5 +1,6 @@
 import { IItem } from '../../types';
 import { action, computed, observable } from 'mobx';
+import { observeDecorators } from '../../observeDecorators';
 import { isArray } from 'lodash';
 
 export class SearchSelectStore {
@@ -13,6 +14,7 @@ export class SearchSelectStore {
   @observable showTooltip: boolean = false;
   constructor(popoverWidth: number) {
     this.popoverWidth = popoverWidth;
+    observeDecorators(this);
   }
 
   showTooltipWithDisabled = (disabled: boolean) => () => {

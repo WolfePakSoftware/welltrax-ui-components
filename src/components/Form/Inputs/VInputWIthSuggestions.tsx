@@ -18,6 +18,7 @@ import { IFieldProps } from './IFieldProps';
 import { FormFieldContainer } from './FormFieldContainer';
 import { Validators } from '../Validators';
 import { computed } from 'mobx';
+import { observeDecorators } from '../observeDecorators';
 import styled from 'styled-components';
 import { IItemMultiple } from './SelectMultipleField';
 
@@ -66,6 +67,7 @@ export class VInputFieldWithSuggestions extends React.Component<
       displayPopover: false
     };
     this.inputRef = props.inputRef ? props.inputRef : React.createRef();
+    observeDecorators(this);
   }
 
   handleClick = (value: string) => {
