@@ -370,7 +370,7 @@ export const StyledRadioButton = styled<PropsWithChildren<any>>(
 export const IconDate = styled('div')`
   display: flex;
   background-color: ${(props: IIconStyle) =>
-    props.backgroundColor ? props.backgroundColor : 'var(--brand-pale-teal)'};
+    props.backgroundColor ? props.backgroundColor : 'color-mix(in srgb, var(--color-foreground) 17%, var(--color-card))'};
   width: 30px;
   height: 30px;
   justify-content: center;
@@ -419,7 +419,7 @@ export const StyledMaskInput = styled(MaskedInput)`
       ? 'box-shadow: 0 0 0 0 rgba(19, 124, 189, 0), 0 0 0 0 rgba(19, 124, 189, 0), inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'
       : 'box-shadow: 0 0 0 0 rgba(219, 55, 55, 0), 0 0 0 0 rgba(219, 55, 55, 0), inset 0 0 0 1px var(--color-destructive), inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'}
   background: ${(props: IMaskedInput) =>
-    props.disabled ? 'var(--brand-pale-teal)' : 'var(--color-card)'};
+    props.disabled ? 'color-mix(in srgb, var(--color-foreground) 10%, var(--color-card))' : 'var(--color-card)'};
   box-shadow: ${(props: IMaskedInput) => props.disabled && 'none'};
   cursor: ${(props: IMaskedInput) => props.disabled && 'not-allowed'};
   height: 30px;
