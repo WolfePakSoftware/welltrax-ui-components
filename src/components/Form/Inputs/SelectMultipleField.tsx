@@ -127,7 +127,7 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
         style={!isSelectable ? { opacity: 0.5, cursor: 'not-allowed' } : undefined}
         labelElement={
           item.value === clearToken && item.label === 'No Selection' ? (
-            <Icon color={(active && 'white') || '#7486949c'} icon={'reset'} />
+            <Icon color={(active && 'var(--brand-white)') || 'var(--color-muted-foreground)'} icon={'reset'} />
           ) : null
         }
       />

@@ -19,7 +19,7 @@ export const DnDListContainer = styled.div`
         : 'lightblue'
       : props.background
       ? props.background
-      : '#eae8e8'};
+      : 'var(--color-muted)'};
   padding: ${(props: IDnDList) => (props.padding ? props.padding : '5px')};
   margin: ${(props: IDnDList) => (props.margin ? props.margin : 0)};
   display: ${(props: IDnDList) =>

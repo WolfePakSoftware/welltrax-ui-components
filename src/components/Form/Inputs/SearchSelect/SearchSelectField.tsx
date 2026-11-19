@@ -112,7 +112,7 @@ export const VSearchSelectField = observer((props: ISearchSelectFieldProps) => {
         {tipLabel && (
           <span
             className={'tipLabel'}
-            style={{ backgroundColor: tipBgColor ? tipBgColor : '#fff' }}
+            style={{ backgroundColor: tipBgColor ? tipBgColor : 'var(--color-card)' }}
           >
             {tipLabel}
           </span>

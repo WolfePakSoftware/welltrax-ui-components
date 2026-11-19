@@ -370,12 +370,12 @@ export const StyledRadioButton = styled<PropsWithChildren<any>>(
 export const IconDate = styled('div')`
   display: flex;
   background-color: ${(props: IIconStyle) =>
-    props.backgroundColor ? props.backgroundColor : '#dcdcdc'};
+    props.backgroundColor ? props.backgroundColor : 'var(--brand-pale-teal)'};
   width: 30px;
   height: 30px;
   justify-content: center;
   align-items: center;
-  border: 1px solid #bdbfc0;
+  border: 1px solid var(--color-border);
   border-radius: 0 3px 3px 0;
   position: absolute;
   right: 0;
@@ -393,7 +393,7 @@ export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
   .DayPicker-Day.DayPicker-Day--disabled.DayPicker-Day:hover {
     background: transparent !important;
     cursor: no-drop !important;
-    color: var(--brand-medium-gray) !important;
+    color: var(--color-muted-foreground) !important;
   }
   .DayPicker-Day {
     margin: 1px !important;
@@ -417,9 +417,9 @@ export const StyledMaskInput = styled(MaskedInput)`
   ${(props: IMaskedInput) =>
     props.intent && props.intent !== Intent.DANGER
       ? 'box-shadow: 0 0 0 0 rgba(19, 124, 189, 0), 0 0 0 0 rgba(19, 124, 189, 0), inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'
-      : 'box-shadow: 0 0 0 0 rgba(219, 55, 55, 0), 0 0 0 0 rgba(219, 55, 55, 0), inset 0 0 0 1px #db3737, inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'}
+      : 'box-shadow: 0 0 0 0 rgba(219, 55, 55, 0), 0 0 0 0 rgba(219, 55, 55, 0), inset 0 0 0 1px var(--color-destructive), inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'}
   background: ${(props: IMaskedInput) =>
-    props.disabled ? 'rgba(206, 217, 224, 0.5)' : '#ffffff'};
+    props.disabled ? 'var(--brand-pale-teal)' : 'var(--color-card)'};
   box-shadow: ${(props: IMaskedInput) => props.disabled && 'none'};
   cursor: ${(props: IMaskedInput) => props.disabled && 'not-allowed'};
   height: 30px;
@@ -431,7 +431,7 @@ export const StyledMaskInput = styled(MaskedInput)`
   font-weight: 400;
   transition: box-shadow 100ms cubic-bezier(0.4, 1, 0.75, 0.9);
   &:focus {
-    box-shadow: 0 0 0 1px #137cbd, 0 0 0 3px rgba(19, 124, 189, 0.3),
+    box-shadow: 0 0 0 1px var(--color-primary), 0 0 0 3px rgba(19, 124, 189, 0.3),
       inset 0 1px 1px rgba(16, 22, 26, 0.2);
   }
 `;

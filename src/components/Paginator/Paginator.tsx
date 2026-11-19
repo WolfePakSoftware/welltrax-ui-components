@@ -252,21 +252,21 @@ export class VPagination extends Component<VPaginatorProps, IState> {
     return this.props.customerStyle &&
       this.props.customerStyle.pageSelectedBackgroundColor
       ? this.props.customerStyle.pageSelectedBackgroundColor
-      : '#e8e8e8';
+      : 'var(--color-muted)';
   };
 
   getColorCurrentPage = (): string => {
     return this.props.customerStyle &&
       this.props.customerStyle.pageSelectedColor
       ? this.props.customerStyle.pageSelectedColor
-      : 'black';
+      : 'var(--color-foreground)';
   };
 
   getBackgroundHover = (): string => {
     return this.props.customerStyle &&
       this.props.customerStyle.pageHoverBackgroundColor
       ? this.props.customerStyle.pageHoverBackgroundColor
-      : '#e8e8e8';
+      : 'var(--color-muted)';
   };
 
   getColorHover = (): string => {

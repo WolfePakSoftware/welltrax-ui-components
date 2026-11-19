@@ -16,7 +16,7 @@ const SRow = styled('div')`
   flex-direction: row;
   align-items: center;
   color: ${(props: IStyleProps) =>
-    props.isActive ? '#252628' : props.secondaryColor ?? '#7b7d82'};
+    props.isActive ? 'var(--color-foreground)' : props.secondaryColor ?? 'var(--color-muted-foreground)'};
 `;
 
 const DescriptionDiv = styled('div')`
@@ -29,15 +29,15 @@ const CircleDiv = styled('div')`
   width: 30px;
   line-height: 30px;
   background-color: ${(props: IStyleProps) =>
-    props.isActive ? props.mainColor ?? '#137cbd' : ''};
+    props.isActive ? props.mainColor ?? 'var(--color-primary)' : ''};
   border-radius: 50%;
   border: solid 1px;
   border-color: ${(props: IStyleProps) =>
     props.isDone
-      ? props.mainColor ?? '#137cbd'
-      : props.secondaryColor ?? '#7b7d82'};
+      ? props.mainColor ?? 'var(--color-primary)'
+      : props.secondaryColor ?? 'var(--color-muted-foreground)'};
   color: ${(props: IStyleProps) =>
-    props.isActive ? '#e9ecf3' : props.secondaryColor ?? '#7b7d82'};
+    props.isActive ? 'var(--color-muted)' : props.secondaryColor ?? 'var(--color-muted-foreground)'};
   text-align: center;
   margin-right: 5px;
 `;

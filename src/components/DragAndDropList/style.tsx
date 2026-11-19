@@ -62,7 +62,7 @@ export const StyledCustomDraggableItem = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 2px 10px !important;
-  border: 1px solid #bbbdbf;
+  border: 1px solid var(--color-border);
   background-color: white;
   & > div.labelsContainer {
     display: flex;
@@ -118,7 +118,7 @@ export const StyledDivContainer = styled.div<
   height: 100%;
   &.sourceList {
     background-color: ${(props: StyledDragAndDropListContainerProps) =>
-      props.sourceListBackGroundColor || `#4bacef66`};
+      props.sourceListBackGroundColor || `var(--color-accent)`};
   }
 `;
 

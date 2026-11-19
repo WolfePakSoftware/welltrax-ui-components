@@ -49,7 +49,7 @@ export const LabelIcon = styled.div`
   border-bottom: ${
     props.activeBorderColor
       ? `2px solid ${props.activeBorderColor} !important`
-      : '2px solid #3d3e3e !important'
+      : '2px solid var(--color-border) !important'
   };
       top: 2px;
       position: relative;
@@ -77,7 +77,7 @@ export const ContainerContent = styled.div`
   ${(props: ITabsPanelStyle) =>
     props.backgroundColor ? `background-color: ${props.backgroundColor};` : ''};
   border-color: ${(props: ITabsPanelStyle) =>
-    props.borderColor ? props.borderColor : '#dbdcdd'};
+    props.borderColor ? props.borderColor : 'var(--color-border)'};
   padding: ${(props: ITabsPanelStyle) => {
     return props.padding ? props.padding : '25px';
   }};

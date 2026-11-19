@@ -77,7 +77,7 @@ export class VSelectionList extends Component<
               const backgroundColor =
                 !!selection && !!selection.background
                   ? selection!.background
-                  : '#0072ce';
+                  : 'var(--color-primary)';
               const textColor =
                 !!selection && !!selection.textColor
                   ? selection!.textColor
