@@ -107,7 +107,7 @@ export const StyledFormGroup = styled<PropsWithChildren<any>>(FormGroup)`
                 & .gsi-error-span {
                     padding-top: 1px;
                     font-size: 12px;
-                    color: #e21a1a;
+                    color: var(--lib-error);
                     text-align: start;
                   }
             }
@@ -387,13 +387,13 @@ export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
   }
   .DayPicker-Day:hover {
     background: rgba(225, 245, 254, 0.8) !important;
-    color: #182026 !important;
+    color: var(--lib-foreground) !important;
   }
   .DayPicker-Day.DayPicker-Day--disabled,
   .DayPicker-Day.DayPicker-Day--disabled.DayPicker-Day:hover {
     background: transparent !important;
     cursor: no-drop !important;
-    color: #d2d5d8 !important;
+    color: var(--lib-muted-foreground) !important;
   }
   .DayPicker-Day {
     margin: 1px !important;
@@ -426,7 +426,7 @@ export const StyledMaskInput = styled(MaskedInput)`
   padding: 0 10px;
   vertical-align: middle;
   line-height: 30px;
-  color: #182026;
+  color: var(--lib-foreground);
   font-size: 14px;
   font-weight: 400;
   transition: box-shadow 100ms cubic-bezier(0.4, 1, 0.75, 0.9);

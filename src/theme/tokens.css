@@ -1,0 +1,94 @@
+/**
+ * welltrax-ui-components theme layer
+ * Maps @pakenergy/design-system tokens to library component roles.
+ * NO HEX VALUES - only references to design system variables.
+ *
+ * Prerequisite: @pakenergy/design-system must be installed and imported first.
+ * Import order: 1) @pakenergy/design-system/dist/tokens.css  2) this file
+ */
+
+:root {
+  /* Primary UI colors - mapped from DS semantic tokens */
+  --lib-primary: var(--color-primary);
+  --lib-primary-foreground: var(--color-primary-foreground);
+  --lib-secondary: var(--color-secondary);
+  --lib-secondary-foreground: var(--color-secondary-foreground);
+
+  /* Surface colors */
+  --lib-background: var(--color-background);
+  --lib-foreground: var(--color-foreground);
+  --lib-card: var(--color-card);
+  --lib-card-foreground: var(--color-card-foreground);
+  --lib-popover: var(--color-popover);
+  --lib-popover-foreground: var(--color-popover-foreground);
+
+  /* Muted colors */
+  --lib-muted: var(--color-muted);
+  --lib-muted-foreground: var(--color-muted-foreground);
+
+  /* Accent colors */
+  --lib-accent: var(--color-accent);
+  --lib-accent-foreground: var(--color-accent-foreground);
+
+  /* State colors */
+  --lib-destructive: var(--color-destructive);
+  --lib-destructive-foreground: var(--color-destructive-foreground);
+  --lib-error: var(--color-error);
+  --lib-error-foreground: var(--color-error-foreground);
+  --lib-warning: var(--color-warning);
+  --lib-warning-foreground: var(--color-warning-foreground);
+  --lib-success: var(--color-success);
+  --lib-success-foreground: var(--color-success-foreground);
+  --lib-info: var(--color-info);
+  --lib-info-foreground: var(--color-info-foreground);
+
+  /* Input colors */
+  --lib-border: var(--color-border);
+  --lib-input: var(--color-input);
+  --lib-ring: var(--color-ring);
+
+  /* Component-specific mappings */
+  /* Badge: error state uses destructive */
+  --lib-badge-error-bg: var(--color-destructive);
+  --lib-badge-error-fg: var(--color-destructive-foreground);
+
+  /* Card: header uses muted background */
+  --lib-card-header-bg: var(--color-muted);
+  --lib-card-header-fg: var(--color-foreground);
+
+  /* Spinner: uses primary color */
+  --lib-spinner-color: var(--color-primary);
+
+  /* Dialog: overlay uses transparent charcoal */
+  --lib-dialog-overlay: var(--brand-charcoal);
+
+  /* Toast: maps to state colors */
+  --lib-toast-success-bg: var(--color-success);
+  --lib-toast-success-fg: var(--color-success-foreground);
+  --lib-toast-error-bg: var(--color-destructive);
+  --lib-toast-error-fg: var(--color-destructive-foreground);
+  --lib-toast-warning-bg: var(--color-warning);
+  --lib-toast-warning-fg: var(--color-warning-foreground);
+  --lib-toast-info-bg: var(--color-info);
+  --lib-toast-info-fg: var(--color-info-foreground);
+
+  /* Brand colors (for direct brand usage like logos, charts) */
+  --lib-brand-navy: var(--brand-navy);
+  --lib-brand-bright-blue: var(--brand-bright-blue);
+  --lib-brand-cyan: var(--brand-cyan);
+  --lib-brand-teal: var(--brand-teal);
+  --lib-brand-white: var(--brand-white);
+  --lib-brand-red: var(--brand-red);
+  --lib-brand-orange: var(--brand-orange);
+  --lib-brand-charcoal: var(--brand-charcoal);
+  --lib-brand-medium-gray: var(--brand-medium-gray);
+  --lib-brand-light-gray: var(--brand-light-gray);
+  --lib-brand-green: var(--brand-green);
+
+  /* Chart colors */
+  --lib-chart-1: var(--chart-1);
+  --lib-chart-2: var(--chart-2);
+  --lib-chart-3: var(--chart-3);
+  --lib-chart-4: var(--chart-4);
+  --lib-chart-5: var(--chart-5);
+}
