@@ -10,9 +10,9 @@ export const BadgeStyle = styled.span`
     top: -28px;
     right: -30px;
     background: ${(props: IVBadgeStyle) =>
-      props.backgroundColorBadge ? props.backgroundColorBadge : 'var(--lib-badge-error-bg)'};
+      props.backgroundColorBadge ? props.backgroundColorBadge : 'var(--color-destructive)'};
     color: ${(props: IVBadgeStyle) =>
-      props.textColorBadge ? props.textColorBadge : 'var(--lib-badge-error-fg)'};
+      props.textColorBadge ? props.textColorBadge : 'var(--color-destructive-foreground)'};
     width: auto;
     height: auto;
     text-align: center;

@@ -53,7 +53,7 @@ export const SliderButtonSC = styled.button`
 
   span {
     width: 25px;
-    color: #fff;
+    color: var(--brand-white);
     display: block;
     margin: 0 auto;
   }

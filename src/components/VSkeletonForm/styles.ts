@@ -23,7 +23,7 @@ export const FakeListContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
-  background-color: #fff;
+  background-color: var(--color-card);
   width: 100%;
   height: 100%;
 `;

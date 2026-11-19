@@ -20,7 +20,7 @@ export const StyledDateRange = styled<PropsWithChildren<any>>(DateRangeInput)`
       }
       &:last-child {
         & a {
-          background-color: #137cbd !important;
+          background-color: var(--color-primary) !important;
           color: white !important;
         }
       }

@@ -45,7 +45,7 @@ export const CarretIcon = styled<PropsWithChildren<any>>(Icon)`
   margin: 5px 0 !important;
   padding: 0 1px !important;
   svg {
-    fill: #5c7080;
+    fill: var(--brand-medium-gray);
   }
 `;
 

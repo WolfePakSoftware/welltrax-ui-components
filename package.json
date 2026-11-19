@@ -9,8 +9,7 @@
   "types": "lib/types/index.d.ts",
   "exports": {
     ".": "./lib/index.js",
-    "./theme": "./lib/theme/index.js",
-    "./theme/tokens.css": "./lib/theme/tokens.css"
+    "./theme": "./lib/theme/index.js"
   },
   "files": [
     "lib"
@@ -56,7 +55,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "rm -rf ./lib && tsc && yarn copy-files",
-    "copy-files": "copyfiles -u 1 'src/**/*.css' lib",
+    "copy-files": "copyfiles -u 2 src/components/**/*.css lib",
     "test": "cross-env CI=true node scripts/test.js --env=jsdom",
     "precommit": "pretty-quick --staged",
     "lint": "tslint './src/**/*.{ts,tsx}'",

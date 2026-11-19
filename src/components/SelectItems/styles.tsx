@@ -47,7 +47,7 @@ export const FlexCol = styled.div`
   flex: ${(props: IColStyled) => props.flex || 1};
   & > h4 {
     text-align: center;
-    color: #5c7080;
+    color: var(--brand-medium-gray);
   }
   height: 100%;
   max-width: 44%;

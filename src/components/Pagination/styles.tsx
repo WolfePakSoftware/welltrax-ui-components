@@ -19,12 +19,12 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   .rc-pagination-next {
     font-size: 14px;
     & span.gsi-pagination-navigation-icon {
-      color: #666;
+      color: var(--brand-medium-gray);
     }
   }
 
   .rc-pagination-disabled span.gsi-pagination-navigation-icon {
-    color: #ccc;
+    color: var(--color-muted-foreground);
   }
 
   .rc-pagination-jump-prev,
