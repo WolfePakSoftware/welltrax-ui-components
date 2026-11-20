@@ -287,7 +287,7 @@ export class VPagination extends Component<VPaginatorProps, IState> {
     return {
       display: 'flex',
       alignItems: 'center',
-      border: 'solid 1px whitesmoke',
+      border: 'solid 1px color-mix(in srgb, var(--color-foreground) 5%, var(--color-card))',
       borderRadius: this.getBorderRadius(),
       width: 'fit-content',
       ...this.props.style

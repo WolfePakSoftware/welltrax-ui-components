@@ -105,15 +105,30 @@ function scanFileForColors(filePath: string, validTokens: Set<string>): ColorVio
       });
     }
 
-    const bareColorRegex = new RegExp(`:\\s+(${Array.from(CSS_NAMED_COLORS).join('|')})\\s*[;!]`, 'gi');
-    while ((match = bareColorRegex.exec(line)) !== null) {
-      violations.push({
-        file: relativePath,
-        line: lineNum,
-        type: 'named',
-        value: match[1],
-        context: line.trim()
-      });
+    if (line.includes('dsTokens') || line.includes('.$value') || line.match(/\w+:\s*dsTokens/)) {
+      continue;
+    }
+
+    const cssValueRegex = /:\s*([^;]+)/g;
+    let cssMatch;
+    while ((cssMatch = cssValueRegex.exec(line)) !== null) {
+      const cssValue = cssMatch[1];
+
+      if (cssValue.includes('var(--')) {
+        continue;
+      }
+
+      const colorWordRegex = new RegExp(`\\b(${Array.from(CSS_NAMED_COLORS).join('|')})\\b`, 'gi');
+      let colorMatch;
+      while ((colorMatch = colorWordRegex.exec(cssValue)) !== null) {
+        violations.push({
+          file: relativePath,
+          line: lineNum,
+          type: 'named',
+          value: colorMatch[1],
+          context: line.trim()
+        });
+      }
     }
 
     const varRegex = /var\((--[a-z0-9-]+)\)/g;
