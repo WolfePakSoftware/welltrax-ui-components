@@ -96,30 +96,24 @@ function scanFileForColors(filePath: string, validTokens: Set<string>): ColorVio
 
     const quotedColorRegex = new RegExp(`['"]\\s*(${Array.from(CSS_NAMED_COLORS).join('|')})\\s*['"]`, 'gi');
     while ((match = quotedColorRegex.exec(line)) !== null) {
-      const colorName = match[1].toLowerCase();
-      if (colorName !== 'black' && colorName !== 'white') {
-        violations.push({
-          file: relativePath,
-          line: lineNum,
-          type: 'named',
-          value: match[1],
-          context: line.trim()
-        });
-      }
+      violations.push({
+        file: relativePath,
+        line: lineNum,
+        type: 'named',
+        value: match[1],
+        context: line.trim()
+      });
     }
 
     const bareColorRegex = new RegExp(`:\\s+(${Array.from(CSS_NAMED_COLORS).join('|')})\\s*[;!]`, 'gi');
     while ((match = bareColorRegex.exec(line)) !== null) {
-      const colorName = match[1].toLowerCase();
-      if (colorName !== 'black' && colorName !== 'white') {
-        violations.push({
-          file: relativePath,
-          line: lineNum,
-          type: 'named',
-          value: match[1],
-          context: line.trim()
-        });
-      }
+      violations.push({
+        file: relativePath,
+        line: lineNum,
+        type: 'named',
+        value: match[1],
+        context: line.trim()
+      });
     }
 
     const varRegex = /var\((--[a-z0-9-]+)\)/g;
