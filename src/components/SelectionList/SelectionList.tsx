@@ -81,7 +81,7 @@ export class VSelectionList extends Component<
               const textColor =
                 !!selection && !!selection.textColor
                   ? selection!.textColor
-                  : 'white';
+                  : 'var(--color-primary-foreground)';
               return (
                 <StyledMenuItem
                   key={value}

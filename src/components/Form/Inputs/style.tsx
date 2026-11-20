@@ -118,7 +118,7 @@ export const StyledFormGroup = styled<PropsWithChildren<any>>(FormGroup)`
 export const StyledInput = styled<PropsWithChildren<any>>(StyledFormGroup)`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--color-card);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;
@@ -151,7 +151,7 @@ export const StyledNumericInput = styled<PropsWithChildren<any>>(
 )`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--color-card);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;
@@ -171,7 +171,7 @@ export const StyledNumericInput = styled<PropsWithChildren<any>>(
 export const StyledDatePicker = styled<PropsWithChildren<any>>(StyledFormGroup)`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--color-card);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;
@@ -237,7 +237,7 @@ export const StyledTagsInput = styled<PropsWithChildren<any>>(StyledFormGroup)`
 export const StyledDateRange = styled<PropsWithChildren<any>>(StyledFormGroup)`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--color-card);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;

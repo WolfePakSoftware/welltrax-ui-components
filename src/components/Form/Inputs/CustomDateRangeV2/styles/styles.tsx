@@ -14,14 +14,14 @@ export const StyledDateRange = styled<PropsWithChildren<any>>(DateRangeInput)`
         `
       &:not(:last-child) {
         & a {
-          background-color: white !important;
-          color: black !important;
+          background-color: var(--color-card) !important;
+          color: var(--color-foreground) !important;
         }
       }
       &:last-child {
         & a {
           background-color: var(--color-primary) !important;
-          color: white !important;
+          color: var(--color-primary-foreground) !important;
         }
       }
       `}

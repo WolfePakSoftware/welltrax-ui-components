@@ -63,7 +63,7 @@ export const StyledCustomDraggableItem = styled.div`
   align-items: flex-start;
   padding: 2px 10px !important;
   border: 1px solid var(--color-border);
-  background-color: white;
+  background-color: var(--color-card);
   & > div.labelsContainer {
     display: flex;
     flex-direction: column;

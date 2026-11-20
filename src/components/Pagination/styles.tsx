@@ -78,7 +78,7 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   }
 
   .rc-pagination-item-active:hover a {
-    color: white;
+    color: var(--color-primary-foreground);
   }
 
   .rc-pagination-item,
