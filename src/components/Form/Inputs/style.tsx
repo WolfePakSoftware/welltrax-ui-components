@@ -302,7 +302,7 @@ export const StyledPopOverWrapper = styled<PropsWithChildren<any>>(
             display: flex;
             justify-content: space-between;
             &:focus {
-              outline: rgba(16, 22, 26, 0.4) auto 2px;
+              outline: color-mix(in srgb, var(--color-foreground) 40%, transparent) auto 2px;
               outline-offset: 2px;
             }
             & span.${Classes.BUTTON_TEXT} {
@@ -383,10 +383,10 @@ export const IconDate = styled('div')`
 
 export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
   .DayPicker-Day--today {
-    background: rgba(187, 222, 251, 0.6);
+    background: color-mix(in srgb, var(--color-primary) 30%, transparent);
   }
   .DayPicker-Day:hover {
-    background: rgba(225, 245, 254, 0.8) !important;
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent) !important;
     color: var(--color-foreground) !important;
   }
   .DayPicker-Day.DayPicker-Day--disabled,
@@ -416,8 +416,8 @@ export const StyledMaskInput = styled(MaskedInput)`
   border-radius: 3px;
   ${(props: IMaskedInput) =>
     props.intent && props.intent !== Intent.DANGER
-      ? 'box-shadow: 0 0 0 0 rgba(19, 124, 189, 0), 0 0 0 0 rgba(19, 124, 189, 0), inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'
-      : 'box-shadow: 0 0 0 0 rgba(219, 55, 55, 0), 0 0 0 0 rgba(219, 55, 55, 0), inset 0 0 0 1px var(--color-destructive), inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'}
+      ? 'box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, inset 0 0 0 1px color-mix(in srgb, var(--color-foreground) 15%, transparent), inset 0 1px 1px color-mix(in srgb, var(--color-foreground) 20%, transparent);'
+      : 'box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, inset 0 0 0 1px var(--color-destructive), inset 0 0 0 1px color-mix(in srgb, var(--color-foreground) 15%, transparent), inset 0 1px 1px color-mix(in srgb, var(--color-foreground) 20%, transparent);'}
   background: ${(props: IMaskedInput) =>
     props.disabled ? 'color-mix(in srgb, var(--color-foreground) 10%, var(--color-card))' : 'var(--color-card)'};
   box-shadow: ${(props: IMaskedInput) => props.disabled && 'none'};
@@ -431,8 +431,8 @@ export const StyledMaskInput = styled(MaskedInput)`
   font-weight: 400;
   transition: box-shadow 100ms cubic-bezier(0.4, 1, 0.75, 0.9);
   &:focus {
-    box-shadow: 0 0 0 1px var(--color-primary), 0 0 0 3px rgba(19, 124, 189, 0.3),
-      inset 0 1px 1px rgba(16, 22, 26, 0.2);
+    box-shadow: 0 0 0 1px var(--color-primary), 0 0 0 3px color-mix(in srgb, var(--color-primary) 30%, transparent),
+      inset 0 1px 1px color-mix(in srgb, var(--color-foreground) 20%, transparent);
   }
 `;
 

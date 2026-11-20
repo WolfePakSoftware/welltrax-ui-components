@@ -17,7 +17,7 @@ export const TabsSpaceFiller = styled.div`
       props.borderBottom ? props.borderBottom : 2}px
     solid;
   border-bottom-color: ${(props: ITabsPanelStyle) =>
-    props.lineColor ? props.lineColor : 'rgba(142,142,142,0.36)'};
+    props.lineColor ? props.lineColor : 'color-mix(in srgb, var(--color-border) 36%, transparent)'};
 `;
 
 export const LabelIcon = styled.div`

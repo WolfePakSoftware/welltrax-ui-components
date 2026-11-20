@@ -44,7 +44,7 @@ const PreviewComponent = (props: PreviewComponentProps) => {
             alignItems: 'center'
           }}
         >
-          <Icon icon={'eye-off'} iconSize={100} color={'gray'} />
+          <Icon icon={'eye-off'} iconSize={100} color={'var(--color-muted)'} />
         </div>
       )}
     </>

@@ -85,7 +85,7 @@ export const DialogButtonsEndsContainers = styled.div`
   justify-content: ${(props: IButtonsEndsContainers) =>
     props.justifyIcons ? props.justifyIcons : 'flex-end'};
   height: 45px;
-  border-top: 1px solid rgba(235, 236, 237, 0.71);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 71%, transparent);
 `;
 
 export const RisizeContainer = styled.div`

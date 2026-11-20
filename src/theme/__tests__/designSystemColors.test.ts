@@ -71,7 +71,7 @@ function scanFileForColors(filePath: string, validTokens: Set<string>): ColorVio
     const line = lines[i];
     const lineNum = i + 1;
 
-    const hexRegex = /#[0-9a-fA-F]{3,8}\b/g;
+    const hexRegex = /#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\b/g;
     let match;
     while ((match = hexRegex.exec(line)) !== null) {
       violations.push({
@@ -134,43 +134,6 @@ function scanFileForColors(filePath: string, validTokens: Set<string>): ColorVio
   return violations;
 }
 
-const KNOWN_PRE_EXISTING_VIOLATIONS = new Set([
-  '/src/components/Dialog/VDraggableDialog.tsx:108',
-  '/src/components/Dialog/VDraggableModal/dialog.tsx:88',
-  '/src/components/Dialog/styled.tsx:15',
-  '/src/components/DragAndDropList/style.tsx:42',
-  '/src/components/DragAndDropList/style.tsx:102',
-  '/src/components/FileUpload/PreviewComponent.tsx:47',
-  '/src/components/Form/Inputs/FormFieldContainer.tsx:22',
-  '/src/components/Form/Inputs/SearchSelect/styled.tsx:18',
-  '/src/components/Form/Inputs/SearchSelect/styled.tsx:19',
-  '/src/components/Form/Inputs/SearchSelect/styled.tsx:20',
-  '/src/components/Form/Inputs/SearchSelect/styled.tsx:21',
-  '/src/components/Form/Inputs/style.tsx:305',
-  '/src/components/Form/Inputs/style.tsx:386',
-  '/src/components/Form/Inputs/style.tsx:389',
-  '/src/components/Form/Inputs/style.tsx:419',
-  '/src/components/Form/Inputs/style.tsx:420',
-  '/src/components/Form/Inputs/style.tsx:434',
-  '/src/components/Form/Inputs/style.tsx:435',
-  '/src/components/Scroll/CarouselMultiple/style.tsx:15',
-  '/src/components/Scroll/CarouselMultiple/style.tsx:47',
-  '/src/components/SelectItems/styles.tsx:26',
-  '/src/components/SelectItems/styles.tsx:27',
-  '/src/components/SelectItems/styles.tsx:41',
-  '/src/components/SelectItems/styles.tsx:42',
-  '/src/components/SelectItems/styles.tsx:86',
-  '/src/components/SelectItems/styles.tsx:87',
-  '/src/components/SelectionList/EmptyData.tsx:28',
-  '/src/components/SelectionList/EmptyData.tsx:40',
-  '/src/components/Spinner/style.tsx:23',
-  '/src/components/TabsPanel/style.tsx:20',
-  '/src/components/VOrgChart/styles.tsx:5',
-  '/src/components/VOrgChart/styles.tsx:32',
-  '/src/components/VSkeletonForm/styles.ts:8',
-  '/src/components/VSkeletonForm/styles.ts:9'
-]);
-
 describe('Design System Colors', () => {
   it('should only use design system color tokens, not hardcoded colors', () => {
     const validTokens = getValidDSTokens();
@@ -183,19 +146,14 @@ describe('Design System Colors', () => {
       allViolations.push(...violations);
     }
 
-    const newViolations = allViolations.filter(v => {
-      const key = `${v.file}:${v.line}`;
-      return !KNOWN_PRE_EXISTING_VIOLATIONS.has(key);
-    });
-
-    if (newViolations.length > 0) {
-      const report = newViolations.map(v =>
+    if (allViolations.length > 0) {
+      const report = allViolations.map(v =>
         `${v.file}:${v.line} [${v.type}] ${v.value}\n  ${v.context}`
       ).join('\n\n');
 
-      fail(`Found ${newViolations.length} NEW hardcoded color(s):\n\n${report}\n\nUse design system tokens instead.`);
+      fail(`Found ${allViolations.length} hardcoded color(s):\n\n${report}\n\nUse design system tokens instead.`);
     }
 
-    expect(newViolations).toHaveLength(0);
+    expect(allViolations).toHaveLength(0);
   });
 });

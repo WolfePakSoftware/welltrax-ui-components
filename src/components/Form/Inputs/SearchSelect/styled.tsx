@@ -15,10 +15,10 @@ export const FlexDiv = styled.div`
   align-items: center;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(251, 251, 251, 1) 10%,
-    rgba(254, 254, 254, 1) 90%,
-    rgba(255, 255, 255, 0) 100%
+    transparent 0%,
+    var(--color-card) 10%,
+    var(--color-card) 90%,
+    transparent 100%
   );
   margin-right: 1px;
   cursor: ${(props: IFlexDiv) => props.disabled && 'not-allowed'};

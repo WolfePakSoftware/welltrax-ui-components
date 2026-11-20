@@ -12,7 +12,7 @@ export const SliderWrapper = styled.div`
   .slider {
     display: flex;
     position: relative;
-    border-bottom: 2px solid rgba(142, 142, 142, 0.36);
+    border-bottom: 2px solid color-mix(in srgb, var(--color-border) 36%, transparent);
 
     &__container {
       display: flex;
@@ -44,7 +44,7 @@ export const SliderButtonSC = styled.button`
   top: 0;
   bottom: 0;
   width: 25px;
-  background: rgba(0, 0, 0, 0.3);
+  background: color-mix(in srgb, var(--color-foreground) 30%, transparent);
   border: 0;
   outline: 0;
   padding: 0;

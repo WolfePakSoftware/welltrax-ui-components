@@ -20,7 +20,7 @@ export const SpinnerContainer = styled.div`
   z-index: 9;
   overflow: hidden;
   background-color: ${(props: ISpinnerContainer) =>
-    props.hasBackdrop && 'rgba(16,22,26,.1)'};
+    props.hasBackdrop && 'color-mix(in srgb, var(--color-foreground) 10%, transparent)'};
   ${(props: ISpinnerContainer) =>
     props.color &&
     css`

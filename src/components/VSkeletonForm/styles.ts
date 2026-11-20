@@ -5,8 +5,8 @@ export const ListFormCol = styled.div`
   width: 100%;
   height: 100%;
   .${Classes.SKELETON}-container {
-    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 1px 1px rgba(16, 22, 26, 0.2),
-      0 2px 6px rgba(16, 22, 26, 0.2);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-foreground) 10%, transparent), 0 1px 1px color-mix(in srgb, var(--color-foreground) 20%, transparent),
+      0 2px 6px color-mix(in srgb, var(--color-foreground) 20%, transparent);
   }
 `;
 
