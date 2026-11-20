@@ -85,14 +85,14 @@ export const DialogButtonsEndsContainers = styled.div`
   justify-content: ${(props: IButtonsEndsContainers) =>
     props.justifyIcons ? props.justifyIcons : 'flex-end'};
   height: 45px;
-  border-top: 1px solid rgba(235, 236, 237, 0.71);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 8%, var(--color-card));
 `;
 
 export const RisizeContainer = styled.div`
   & > .ant-design-draggable-modal-resize-handle-inner {
     width: 12px;
     right: 14px;
-    border: 2px solid grey;
+    border: 2px solid color-mix(in srgb, var(--color-foreground) 63%, var(--color-card));
     height: 12px;
     bottom: 14px;
     position: absolute;

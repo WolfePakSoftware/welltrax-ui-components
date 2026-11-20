@@ -105,7 +105,7 @@ const VDraggable = (props: IDraggableDialog): JSX.Element => {
         width: '100%',
         height: '100%',
         display: `${!props.isOpen ? 'none' : ''}`,
-        backgroundColor: 'rgba(0,0,0,0.3)',
+        backgroundColor: 'color-mix(in srgb, var(--color-foreground) 38%, var(--color-card))',
         paddingBottom: '50px'
       }}
       className={`gsi-div-move-dialog gsi-${classNameDialog}`}

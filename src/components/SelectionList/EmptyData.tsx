@@ -25,7 +25,7 @@ export const EmptyData = (props: IEmptyData) => {
       props.settings &&
       props.settings!.color &&
       props.settings!.color) ||
-    'rgba(49, 59, 67, 0.27)';
+    'color-mix(in srgb, var(--color-foreground) 27%, transparent)';
   const height: string =
     (props &&
       props.settings &&
@@ -37,7 +37,7 @@ export const EmptyData = (props: IEmptyData) => {
       props.settings &&
       props.settings!.backgroundColor &&
       props.settings!.backgroundColor) ||
-    'rgb(245, 245, 245)';
+    'var(--color-muted)';
 
   const iconSize: number =
     (props &&

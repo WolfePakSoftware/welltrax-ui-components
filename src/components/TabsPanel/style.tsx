@@ -17,7 +17,7 @@ export const TabsSpaceFiller = styled.div`
       props.borderBottom ? props.borderBottom : 2}px
     solid;
   border-bottom-color: ${(props: ITabsPanelStyle) =>
-    props.lineColor ? props.lineColor : 'rgba(142,142,142,0.36)'};
+    props.lineColor ? props.lineColor : 'color-mix(in srgb, var(--color-border) 22%, var(--color-card))'};
 `;
 
 export const LabelIcon = styled.div`
@@ -49,7 +49,7 @@ export const LabelIcon = styled.div`
   border-bottom: ${
     props.activeBorderColor
       ? `2px solid ${props.activeBorderColor} !important`
-      : '2px solid #3d3e3e !important'
+      : '2px solid var(--color-border) !important'
   };
       top: 2px;
       position: relative;
@@ -77,7 +77,7 @@ export const ContainerContent = styled.div`
   ${(props: ITabsPanelStyle) =>
     props.backgroundColor ? `background-color: ${props.backgroundColor};` : ''};
   border-color: ${(props: ITabsPanelStyle) =>
-    props.borderColor ? props.borderColor : '#dbdcdd'};
+    props.borderColor ? props.borderColor : 'var(--color-border)'};
   padding: ${(props: ITabsPanelStyle) => {
     return props.padding ? props.padding : '25px';
   }};

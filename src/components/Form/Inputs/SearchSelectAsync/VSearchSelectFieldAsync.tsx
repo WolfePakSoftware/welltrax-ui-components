@@ -213,7 +213,7 @@ export const VSearchSelectFieldAsync: FC<VSearchSelectFieldAsyncProps> = observe
                     <span
                       className={'tipLabel'}
                       style={{
-                        backgroundColor: tipBgColor ? tipBgColor : '#fff'
+                        backgroundColor: tipBgColor ? tipBgColor : 'var(--color-card)'
                       }}
                     >
                       {tipLabel}

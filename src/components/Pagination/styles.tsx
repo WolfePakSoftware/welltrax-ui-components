@@ -19,19 +19,19 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   .rc-pagination-next {
     font-size: 14px;
     & span.gsi-pagination-navigation-icon {
-      color: #666;
+      color: var(--color-muted-foreground);
     }
   }
 
   .rc-pagination-disabled span.gsi-pagination-navigation-icon {
-    color: #ccc;
+    color: var(--color-muted-foreground);
   }
 
   .rc-pagination-jump-prev,
   .rc-pagination-jump-next {
     & span.gsi-pagination-navigation-jump-icon {
       color: ${(props: IPagination) =>
-        props.buttonColor ? props.buttonColor : '#396faa'};
+        props.buttonColor ? props.buttonColor : 'var(--color-primary)'};
       vertical-align: middle;
     }
     &:not(:hover) {
@@ -52,12 +52,12 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   .rc-pagination-simple .rc-pagination-simple-pager button:active,
   .rc-pagination-simple .rc-pagination-simple-pager button:focus {
     border-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+      props.buttonColor ? props.buttonColor : 'var(--color-primary)'};
   }
 
   .rc-pagination-item-active {
     background-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+      props.buttonColor ? props.buttonColor : 'var(--color-primary)'};
   }
 
   .rc-pagination-item:hover a,
@@ -74,11 +74,11 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   .rc-pagination-simple .rc-pagination-simple-pager button:active,
   .rc-pagination-simple .rc-pagination-simple-pager button:focus {
     color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+      props.buttonColor ? props.buttonColor : 'var(--color-primary)'};
   }
 
   .rc-pagination-item-active:hover a {
-    color: white;
+    color: var(--color-primary-foreground);
   }
 
   .rc-pagination-item,
@@ -97,16 +97,16 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   /*SELECT*/
   li.rc-select-dropdown-menu-item-active {
     background-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+      props.buttonColor ? props.buttonColor : 'var(--color-primary)'};
   }
 
   .rc-select-focused .rc-select-selection,
   .rc-select-enabled .rc-select-selection:hover {
     border-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+      props.buttonColor ? props.buttonColor : 'var(--color-primary)'};
   }
   .rc-select-enabled .rc-select-selection:active {
     border-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+      props.buttonColor ? props.buttonColor : 'var(--color-primary)'};
   }
 `;

@@ -58,7 +58,7 @@ const ItemsByPages = (props: IItemsByPages) => {
       id="items-by-page"
       fieldState={props.fieldState}
       onChange={props.onChange}
-      color={props.color ? props.color : 'black'}
+      color={props.color ? props.color : 'var(--color-foreground)'}
     />
   );
 };
@@ -252,27 +252,27 @@ export class VPagination extends Component<VPaginatorProps, IState> {
     return this.props.customerStyle &&
       this.props.customerStyle.pageSelectedBackgroundColor
       ? this.props.customerStyle.pageSelectedBackgroundColor
-      : '#e8e8e8';
+      : 'var(--color-muted)';
   };
 
   getColorCurrentPage = (): string => {
     return this.props.customerStyle &&
       this.props.customerStyle.pageSelectedColor
       ? this.props.customerStyle.pageSelectedColor
-      : 'black';
+      : 'var(--color-foreground)';
   };
 
   getBackgroundHover = (): string => {
     return this.props.customerStyle &&
       this.props.customerStyle.pageHoverBackgroundColor
       ? this.props.customerStyle.pageHoverBackgroundColor
-      : '#e8e8e8';
+      : 'var(--color-muted)';
   };
 
   getColorHover = (): string => {
     return this.props.customerStyle && this.props.customerStyle.pageHoverColor
       ? this.props.customerStyle.pageHoverColor
-      : 'black';
+      : 'var(--color-foreground)';
   };
 
   private getBorderRadius = () => {
@@ -287,7 +287,7 @@ export class VPagination extends Component<VPaginatorProps, IState> {
     return {
       display: 'flex',
       alignItems: 'center',
-      border: 'solid 1px whitesmoke',
+      border: 'solid 1px color-mix(in srgb, var(--color-foreground) 5%, var(--color-card))',
       borderRadius: this.getBorderRadius(),
       width: 'fit-content',
       ...this.props.style
@@ -369,6 +369,6 @@ export class VPagination extends Component<VPaginatorProps, IState> {
   private getColorIcon = (): string => {
     return this.props.customerStyle && this.props.customerStyle.iconColor
       ? this.props.customerStyle.iconColor
-      : 'black';
+      : 'var(--color-foreground)';
   };
 }

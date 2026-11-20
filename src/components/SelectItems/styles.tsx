@@ -23,8 +23,8 @@ export const BodyContainer = styled.div`
     min-width: 100%;
   }
   & .empty-container {
-    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0),
-      0 0 0 rgba(16, 22, 26, 0);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-foreground) 15%, transparent), 0 0 0 transparent,
+      0 0 0 transparent;
     border-radius: 3px;
   }
   & ul {
@@ -38,8 +38,8 @@ export const ButtonsEndsContainers = styled.div`
   padding: 0 5px 5px;
   justify-content: flex-end;
   height: 45px;
-  background-color: rgba(235, 236, 237, 0.41);
-  border-top: 1px solid rgba(235, 236, 237, 0.71);
+  background-color: color-mix(in srgb, var(--color-muted) 41%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 8%, var(--color-card));
   align-items: center;
 `;
 
@@ -47,7 +47,7 @@ export const FlexCol = styled.div`
   flex: ${(props: IColStyled) => props.flex || 1};
   & > h4 {
     text-align: center;
-    color: #5c7080;
+    color: var(--color-muted-foreground);
   }
   height: 100%;
   max-width: 44%;
@@ -83,7 +83,7 @@ export const SelectAllButtons = styled<PropsWithChildren<any>>(Button)`
 `;
 
 export const StyledScroll = styled<PropsWithChildren<any>>(Scrollbar)`
-  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0),
-    0 0 0 rgba(16, 22, 26, 0);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-foreground) 15%, transparent), 0 0 0 transparent,
+    0 0 0 transparent;
   border-radius: 3px;
 `;

@@ -12,7 +12,7 @@ export const DialogStyled = styled<PropsWithChildren<any>>(Dialog)`
   width: ${(props: IDialogProps) => `${props.width}px!important`};
   height: ${(props: IDialogProps) => `${props.height}px!important`};
   & > .${Classes.DIALOG_CONTAINER}.${Classes.OVERLAY_CONTENT}.${Classes.OVERLAY}-enter-done:focus {
-    outline: rgba(255, 255, 255, 0) auto 2px;
+    outline: transparent auto 2px;
     outline-offset: 2px;
     -moz-outline-radius: 6px;
   }

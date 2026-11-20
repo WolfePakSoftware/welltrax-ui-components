@@ -16,10 +16,10 @@ export const DnDListContainer = styled.div`
     props.isDragging
       ? props.dragColor
         ? props.dragColor
-        : 'lightblue'
+        : 'color-mix(in srgb, var(--color-primary) 45%, var(--color-card))'
       : props.background
       ? props.background
-      : '#eae8e8'};
+      : 'var(--color-muted)'};
   padding: ${(props: IDnDList) => (props.padding ? props.padding : '5px')};
   margin: ${(props: IDnDList) => (props.margin ? props.margin : 0)};
   display: ${(props: IDnDList) =>

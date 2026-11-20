@@ -19,7 +19,7 @@ export interface IFieldState {
 
 export const RequiredSpan = styled.span`
   margin-right: 2px;
-  color: red;
+  color: var(--color-destructive);
 `;
 
 export class FormFieldContainer extends React.Component<

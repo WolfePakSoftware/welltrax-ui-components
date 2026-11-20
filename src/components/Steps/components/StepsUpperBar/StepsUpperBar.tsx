@@ -24,8 +24,8 @@ const SLine = styled('hr')`
   border-top: 1px solid
     ${(props: ISLine) =>
       props.isDone
-        ? props.mainColor ?? '#137cbd'
-        : props.secondaryColor ?? '#c7cbd3'};
+        ? props.mainColor ?? 'var(--color-primary)'
+        : props.secondaryColor ?? 'color-mix(in srgb, var(--color-foreground) 25%, var(--color-card))'};
   margin: 1em 0;
   padding: 0;
   width: 100%;

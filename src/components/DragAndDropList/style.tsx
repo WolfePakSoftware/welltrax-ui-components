@@ -39,7 +39,7 @@ export const DNDItem = styled.div<PropsWithChildren<any>>`
     width: 100%;
   }
   &:hover {
-    background-color: rgba(167, 182, 194, 0.3);
+    background-color: color-mix(in srgb, var(--color-foreground) 11%, var(--color-card));
     cursor: grabbing;
     text-decoration: none;
   }
@@ -62,8 +62,8 @@ export const StyledCustomDraggableItem = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 2px 10px !important;
-  border: 1px solid #bbbdbf;
-  background-color: white;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
   & > div.labelsContainer {
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@ export const StyledCustomDraggableItem = styled.div`
 export const StyledDNDList = styled.div`
   overflow-y: auto;
   & div.dndItemSelected .customDraggable {
-    background-color: rgba(104, 167, 218, 0.6);
+    background-color: color-mix(in srgb, var(--color-primary) 50%, var(--color-card));
   }
 `;
 
@@ -118,7 +118,7 @@ export const StyledDivContainer = styled.div<
   height: 100%;
   &.sourceList {
     background-color: ${(props: StyledDragAndDropListContainerProps) =>
-      props.sourceListBackGroundColor || `#4bacef66`};
+      props.sourceListBackGroundColor || `var(--color-accent)`};
   }
 `;
 
