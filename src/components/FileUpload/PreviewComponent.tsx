@@ -44,7 +44,7 @@ const PreviewComponent = (props: PreviewComponentProps) => {
             alignItems: 'center'
           }}
         >
-          <Icon icon={'eye-off'} iconSize={100} color={'var(--color-muted)'} />
+          <Icon icon={'eye-off'} iconSize={100} color={'color-mix(in srgb, var(--color-foreground) 63%, var(--color-card))'} />
         </div>
       )}
     </>

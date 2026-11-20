@@ -16,7 +16,7 @@ export const DnDListContainer = styled.div`
     props.isDragging
       ? props.dragColor
         ? props.dragColor
-        : 'color-mix(in srgb, var(--color-primary) 20%, var(--color-card))'
+        : 'color-mix(in srgb, var(--color-foreground) 25%, var(--color-card))'
       : props.background
       ? props.background
       : 'var(--color-muted)'};

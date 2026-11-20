@@ -58,7 +58,7 @@ const ItemsByPages = (props: IItemsByPages) => {
       id="items-by-page"
       fieldState={props.fieldState}
       onChange={props.onChange}
-      color={props.color ? props.color : 'var(--color-foreground)'}
+      color={props.color ? props.color : 'black'}
     />
   );
 };
@@ -272,7 +272,7 @@ export class VPagination extends Component<VPaginatorProps, IState> {
   getColorHover = (): string => {
     return this.props.customerStyle && this.props.customerStyle.pageHoverColor
       ? this.props.customerStyle.pageHoverColor
-      : 'var(--color-foreground)';
+      : 'black';
   };
 
   private getBorderRadius = () => {
@@ -369,6 +369,6 @@ export class VPagination extends Component<VPaginatorProps, IState> {
   private getColorIcon = (): string => {
     return this.props.customerStyle && this.props.customerStyle.iconColor
       ? this.props.customerStyle.iconColor
-      : 'var(--color-foreground)';
+      : 'black';
   };
 }

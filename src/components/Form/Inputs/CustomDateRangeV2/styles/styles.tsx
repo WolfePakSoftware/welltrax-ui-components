@@ -15,7 +15,7 @@ export const StyledDateRange = styled<PropsWithChildren<any>>(DateRangeInput)`
       &:not(:last-child) {
         & a {
           background-color: var(--color-card) !important;
-          color: var(--color-foreground) !important;
+          color: black !important;
         }
       }
       &:last-child {

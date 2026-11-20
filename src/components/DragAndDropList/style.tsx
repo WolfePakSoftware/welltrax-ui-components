@@ -39,7 +39,7 @@ export const DNDItem = styled.div<PropsWithChildren<any>>`
     width: 100%;
   }
   &:hover {
-    background-color: color-mix(in srgb, var(--color-muted) 30%, transparent);
+    background-color: color-mix(in srgb, var(--color-foreground) 11%, var(--color-card));
     cursor: grabbing;
     text-decoration: none;
   }
@@ -99,7 +99,7 @@ export const StyledCustomDraggableItem = styled.div`
 export const StyledDNDList = styled.div`
   overflow-y: auto;
   & div.dndItemSelected .customDraggable {
-    background-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
+    background-color: color-mix(in srgb, var(--color-primary) 50%, var(--color-card));
   }
 `;
 

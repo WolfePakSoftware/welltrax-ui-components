@@ -39,7 +39,7 @@ export const ButtonsEndsContainers = styled.div`
   justify-content: flex-end;
   height: 45px;
   background-color: color-mix(in srgb, var(--color-muted) 41%, transparent);
-  border-top: 1px solid color-mix(in srgb, var(--color-border) 71%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 8%, var(--color-card));
   align-items: center;
 `;
 

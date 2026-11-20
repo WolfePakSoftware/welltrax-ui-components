@@ -383,10 +383,10 @@ export const IconDate = styled('div')`
 
 export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
   .DayPicker-Day--today {
-    background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+    background: color-mix(in srgb, var(--color-primary) 19%, var(--color-card));
   }
   .DayPicker-Day:hover {
-    background: color-mix(in srgb, var(--color-primary) 20%, transparent) !important;
+    background: color-mix(in srgb, var(--color-primary) 11%, var(--color-card)) !important;
     color: var(--color-foreground) !important;
   }
   .DayPicker-Day.DayPicker-Day--disabled,

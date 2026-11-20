@@ -16,7 +16,7 @@ export const Pages = styled.ul`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  color: var(--color-foreground);
+  color: black;
   margin: 0px;
 `;
 
