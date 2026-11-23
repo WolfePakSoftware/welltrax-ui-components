@@ -37,7 +37,7 @@ const CircleDiv = styled('div')`
       ? props.mainColor ?? 'var(--color-primary)'
       : props.secondaryColor ?? 'var(--color-muted-foreground)'};
   color: ${(props: IStyleProps) =>
-    props.isActive ? 'var(--color-muted)' : props.secondaryColor ?? 'var(--color-muted-foreground)'};
+    props.isActive ? 'var(--color-primary-foreground)' : props.secondaryColor ?? 'var(--color-muted-foreground)'};
   text-align: center;
   margin-right: 5px;
 `;
