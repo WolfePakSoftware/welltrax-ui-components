@@ -39,7 +39,7 @@ export const DNDItem = styled.div<PropsWithChildren<any>>`
     width: 100%;
   }
   &:hover {
-    background-color: color-mix(in srgb, var(--color-foreground) 11%, var(--color-card));
+    background-color: color-mix(in srgb, var(--color-primary) 10%, var(--color-card));
     cursor: grabbing;
     text-decoration: none;
   }
@@ -118,7 +118,7 @@ export const StyledDivContainer = styled.div<
   height: 100%;
   &.sourceList {
     background-color: ${(props: StyledDragAndDropListContainerProps) =>
-      props.sourceListBackGroundColor || `var(--color-accent)`};
+      props.sourceListBackGroundColor || `color-mix(in srgb, var(--color-primary) 10%, var(--color-card))`};
   }
 `;
 
