@@ -1,43 +1,14 @@
-# Design System Gaps - Library Component Colors
+# Colors the design system doesn't cover (library)
 
-This document tracks colors used by library components that have no ideal match in the design system.
+The design system serves the whole organization, so the library uses it as it is and never adds to it. Where it has no exact color for a library need, the library uses the nearest existing token or a tint of one, and the choice is listed here so it can be removed later.
 
-## Gap: Light disabled/inactive colors for UI elements
+## Disabled states
 
-**Issue:**
-The design system semantic color tokens focus on enabled/active states. Disabled states need lighter variants of text and borders to appear faded.
+The design system has no disabled text or disabled background token; its `color.muted` token is described for "disabled states".
 
-**Original disabled colors:**
-- `#d2d5d8` - light disabled text (RGB 210, 213, 216)
-- `#ccc` - light disabled icons (RGB 204, 204, 204)  
-- `#dcdcdc` - disabled input backgrounds (RGB 220, 220, 220)
+- Disabled field and date icon fill: `var(--color-muted)` (library PR #23; before that, foreground tints of 10% and 17% over the card).
+- Disabled dates: the normal text color at `opacity: 0.5`, as the design system demos do (`opacity-50`).
 
-**Available DS tokens for comparison:**
-- `--color-foreground` (#353434) - dark charcoal for body text
-- `--color-muted-foreground` (#404A53) - darker gray for secondary text  
-- `--brand-pale-teal` (#B9D5D3) - light blue-gray (RGB 185, 213, 211), closest to disabled grays
+## Semi-transparent overlay
 
-**Current mapping (using pale-teal as best fit):**
-- Form input disabled backgrounds: `--brand-pale-teal` (#B9D5D3)
-- Steps inactive states: `--brand-pale-teal` (#B9D5D3) 
-- Note: pale-teal has a slight teal tint vs. the neutral grays originally used
-
-**Components affected:**
-- Form/Inputs/style.tsx - disabled input backgrounds
-- Steps/StepsUpperBar - inactive step indicators
-
-**Recommendation:**
-Add semantic disabled state tokens that are light neutral grays:
-- `--color-disabled-foreground` around RGB(200, 203, 206) for disabled text
-- `--color-disabled-background` around RGB(220, 220, 220) for disabled inputs
-These would be neutral (no tint) unlike pale-teal's blue-green hint.
-
-**Usage count:** 5 components use disabled states
-
----
-
-## Non-gaps (Resolved)
-
-These were initially considered gaps but have acceptable DS mappings:
-
-- **Semi-transparent overlay** (#a9a9a9b0 in FileUpload): Mapped to `--brand-medium-gray` with opacity. This works because the overlay purpose (dim the preview) is achieved with the brand gray.
+- FileUpload preview overlay: `--brand-medium-gray` with opacity, an existing token.
