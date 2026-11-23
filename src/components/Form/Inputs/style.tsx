@@ -394,6 +394,7 @@ export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
     background: transparent !important;
     cursor: no-drop !important;
     color: var(--color-muted-foreground) !important;
+    opacity: 0.5;
   }
   .DayPicker-Day {
     margin: 1px !important;
