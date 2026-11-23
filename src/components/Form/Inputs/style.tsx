@@ -386,7 +386,7 @@ export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
     background: color-mix(in srgb, var(--color-primary) 19%, var(--color-card));
   }
   .DayPicker-Day:hover {
-    background: color-mix(in srgb, var(--color-primary) 11%, var(--color-card)) !important;
+    background: color-mix(in srgb, var(--color-primary) 10%, var(--color-card)) !important;
     color: var(--color-foreground) !important;
   }
   .DayPicker-Day.DayPicker-Day--disabled,
