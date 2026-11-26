@@ -8,7 +8,7 @@ interface ISDiv {
 }
 
 const SDiv = styled('div')`
-  color: ${(props: ISDiv) => props.mainColor ?? '#137cbd'};
+  color: ${(props: ISDiv) => props.mainColor ?? 'var(--ui-steps-active)'};
   font-family: arial;
   -ms-transform: scaleX(-1) rotate(-45deg); /* IE 9 */
   -webkit-transform: scaleX(-1) rotate(-45deg); /* Chrome, Safari, Opera */

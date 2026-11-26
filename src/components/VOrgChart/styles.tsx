@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { IOrgChartContainer } from './types';
 
 function getLineStyle(
-  lineColor = 'gray',
+  lineColor = 'var(--ui-text-subtle-primary)',
   lineWidth = 1,
   isTop = false
 ): string {
@@ -29,7 +29,7 @@ export const OrgChartContainer = styled.div`
     .lines {
       & .downLine {
         background-color: ${({ lineColor }: IOrgChartContainer) =>
-          lineColor || 'gray'};
+          lineColor || 'var(--ui-text-subtle-primary)'};
         width: ${({ lineWidth }: IOrgChartContainer) =>
           `${(lineWidth || 1) * 2}px`};
       }

@@ -1727,6 +1727,10 @@
   dependencies:
     "@octokit/openapi-types" "^12.11.0"
 
+"@pakenergy/design-system@github:WolfePakSoftware/design-system#v1.7.1":
+  version "1.7.1"
+  resolved "git+ssh://git@github.com/WolfePakSoftware/design-system.git#4767a0d07850025d64af90ca59d4e8adf4c33f87"
+
 "@semantic-release/changelog@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-5.0.1.tgz#50a84b63e5d391b7debfe021421589fa2bcdafe4"

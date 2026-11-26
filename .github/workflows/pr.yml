@@ -22,6 +22,14 @@ jobs:
           node-version: '24'
           cache: yarn
 
+      - name: Load the design system deploy key
+        env:
+          DESIGN_SYSTEM_SSH_KEY: ${{ secrets.DESIGN_SYSTEM_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          (umask 077; test -n "$DESIGN_SYSTEM_SSH_KEY" || { echo "::error::Add the DESIGN_SYSTEM_SSH_KEY secret"; exit 1; }; printf '%s\n' "$DESIGN_SYSTEM_SSH_KEY" > ~/.ssh/id_ed25519)
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
+
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 

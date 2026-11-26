@@ -22,3 +22,4 @@ export * from './Pagination';
 export * from './CancellablePromise';
 export * from './CustomHooks';
 export * from './Steps';
+export * from './theme';

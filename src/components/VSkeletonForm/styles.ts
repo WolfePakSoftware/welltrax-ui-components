@@ -5,8 +5,8 @@ export const ListFormCol = styled.div`
   width: 100%;
   height: 100%;
   .${Classes.SKELETON}-container {
-    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 1px 1px rgba(16, 22, 26, 0.2),
-      0 2px 6px rgba(16, 22, 26, 0.2);
+    box-shadow: 0 0 0 1px var(--ui-skeleton), 0 1px 1px var(--ui-shadow),
+      0 2px 6px var(--ui-shadow);
   }
 `;
 
@@ -23,7 +23,7 @@ export const FakeListContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
-  background-color: #fff;
+  background-color: var(--ui-active-foreground);
   width: 100%;
   height: 100%;
 `;

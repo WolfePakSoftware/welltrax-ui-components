@@ -68,8 +68,7 @@ export interface IItemMultiple {
   label: string;
   rep?: string;
   readonly?: boolean;
-  selectable?: boolean;  // Optional boolean property
-
+  selectable?: boolean; // Optional boolean property
 }
 
 const clearToken = `$empty#Option#first#item_unique_`;
@@ -110,10 +109,10 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
     const founded = selectedItems.some(
       selected => selected.value === item.value
     );
-    
+
     // Check if item is selectable (default to true if not specified)
     const isSelectable = item.selectable !== false;
-    
+
     return (
       <MenuItem
         icon={founded ? 'tick' : 'blank'}
@@ -124,10 +123,18 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
         onClick={isSelectable ? handleClick : undefined}
         text={item.label}
         shouldDismissPopover={item.value === clearToken}
-        style={!isSelectable ? { opacity: 0.5, cursor: 'not-allowed' } : undefined}
+        style={
+          !isSelectable ? { opacity: 0.5, cursor: 'not-allowed' } : undefined
+        }
         labelElement={
           item.value === clearToken && item.label === 'No Selection' ? (
-            <Icon color={(active && 'white') || '#7486949c'} icon={'reset'} />
+            <Icon
+              color={
+                (active && 'var(--ui-active-foreground)') ||
+                'var(--ui-icon-muted)'
+              }
+              icon={'reset'}
+            />
           ) : null
         }
       />
@@ -274,7 +281,7 @@ export const VSelectMultiple = observer((props: ISelectFieldProps) => {
     if (value?.item?.selectable === false) {
       return;
     }
-    
+
     if (usedClear.current) {
       noChangeToClear.current = true;
       usedClear.current = false;
