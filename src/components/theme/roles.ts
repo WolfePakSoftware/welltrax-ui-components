@@ -80,6 +80,7 @@ export const UIRoles = createGlobalStyle`
     --ui-label-background: #ffffff;
     --ui-input-ring: #10161a26;
     --ui-tabs-border: #dbdcdd;
+    --ui-color-picker-border: #808080;
   }
 `;
 

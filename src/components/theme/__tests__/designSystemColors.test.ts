@@ -8,7 +8,9 @@ const DS_TOKENS_PATH = join(
 
 // The roles file is the one place --ui-* roles are defined.
 const UI_ROLES = new Set(
-  readFileSync(join(__dirname, '../roles.ts'), 'utf-8').match(/--ui-[a-z0-9-]+(?=:)/g) ?? []
+  readFileSync(join(__dirname, '../roles.ts'), 'utf-8').match(
+    /--ui-[a-z0-9-]+(?=:)/g
+  ) ?? []
 );
 
 const CSS_NAMED_COLORS = new Set([
@@ -186,15 +188,16 @@ function getAllSourceFiles(dir: string, files: string[] = []): string[] {
       if (
         !entry.includes('__tests__') &&
         !entry.includes('.test.') &&
-        entry !== 'node_modules' &&
-        entry !== 'ColorPicker'
+        entry !== 'node_modules'
       ) {
         getAllSourceFiles(fullPath, files);
       }
     } else if (
       (entry.endsWith('.ts') || entry.endsWith('.tsx')) &&
       !entry.includes('.test.') &&
-      !entry.includes('.stories.')
+      !entry.includes('.stories.') &&
+      // The color picker's palette is the colors users pick from, not UI colors.
+      !fullPath.endsWith(join('ColorPicker', 'util.ts'))
     ) {
       files.push(fullPath);
     }
