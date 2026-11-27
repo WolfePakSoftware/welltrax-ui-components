@@ -15,10 +15,10 @@ export const FlexDiv = styled.div`
   align-items: center;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(251, 251, 251, 1) 10%,
-    rgba(254, 254, 254, 1) 90%,
-    rgba(255, 255, 255, 0) 100%
+    transparent 0%,
+    var(--ui-active-foreground) 10%,
+    var(--ui-active-foreground) 90%,
+    transparent 100%
   );
   margin-right: 1px;
   cursor: ${(props: IFlexDiv) => props.disabled && 'not-allowed'};
@@ -45,7 +45,7 @@ export const CarretIcon = styled<PropsWithChildren<any>>(Icon)`
   margin: 5px 0 !important;
   padding: 0 1px !important;
   svg {
-    fill: #5c7080;
+    fill: var(--ui-text-subtle);
   }
 `;
 

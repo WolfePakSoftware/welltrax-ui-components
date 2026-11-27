@@ -38,12 +38,12 @@ export const FileExtSpan = styled.span`
 `;
 
 export const PreviewContainer = styled.div`
-  border: 1px solid #5c7080;
+  border: 1px solid var(--ui-upload-border);
   overflow: hidden;
   border-radius: 5px;
   width: 320px;
   height: 240px;
-  background: #a9a9a9b0;
+  background: var(--ui-overlay-preview);
 `;
 
 export const ButtonsRowContainer = styled.div`

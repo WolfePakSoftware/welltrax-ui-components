@@ -16,7 +16,9 @@ const SRow = styled('div')`
   flex-direction: row;
   align-items: center;
   color: ${(props: IStyleProps) =>
-    props.isActive ? '#252628' : props.secondaryColor ?? '#7b7d82'};
+    props.isActive
+      ? 'var(--ui-steps-active-text)'
+      : props.secondaryColor ?? 'var(--ui-muted-foreground-text-medium)'};
 `;
 
 const DescriptionDiv = styled('div')`
@@ -29,15 +31,17 @@ const CircleDiv = styled('div')`
   width: 30px;
   line-height: 30px;
   background-color: ${(props: IStyleProps) =>
-    props.isActive ? props.mainColor ?? '#137cbd' : ''};
+    props.isActive ? props.mainColor ?? 'var(--ui-steps-active)' : ''};
   border-radius: 50%;
   border: solid 1px;
   border-color: ${(props: IStyleProps) =>
     props.isDone
-      ? props.mainColor ?? '#137cbd'
-      : props.secondaryColor ?? '#7b7d82'};
+      ? props.mainColor ?? 'var(--ui-steps-active)'
+      : props.secondaryColor ?? 'var(--ui-muted-foreground-text-medium)'};
   color: ${(props: IStyleProps) =>
-    props.isActive ? '#e9ecf3' : props.secondaryColor ?? '#7b7d82'};
+    props.isActive
+      ? 'var(--ui-steps-pending-fill)'
+      : props.secondaryColor ?? 'var(--ui-muted-foreground-text-medium)'};
   text-align: center;
   margin-right: 5px;
 `;

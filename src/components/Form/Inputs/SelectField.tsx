@@ -144,7 +144,13 @@ export class VSelectField extends React.Component<ISelectFieldProps, IState> {
           this.props.allowEmptyItem &&
           item.value === '' &&
           item.label === 'No Selection' ? (
-            <Icon color={(active && 'white') || '#7486949c'} icon={'reset'} />
+            <Icon
+              color={
+                (active && 'var(--ui-active-foreground)') ||
+                'var(--ui-icon-muted)'
+              }
+              icon={'reset'}
+            />
           ) : null
         }
       />

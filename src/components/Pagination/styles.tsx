@@ -8,6 +8,8 @@ import { IPagination } from './types';
 function getPosition(position: 'start' | 'center' | 'end') {
   return position !== 'center' ? `flex-${position}` : position;
 }
+const buttonColor = (props: IPagination) =>
+  props.buttonColor || 'var(--ui-pagination-active)';
 export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   display: flex;
   justify-content: ${(props: IPagination) =>
@@ -19,19 +21,18 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   .rc-pagination-next {
     font-size: 14px;
     & span.gsi-pagination-navigation-icon {
-      color: #666;
+      color: var(--ui-pagination-text);
     }
   }
 
   .rc-pagination-disabled span.gsi-pagination-navigation-icon {
-    color: #ccc;
+    color: var(--ui-text-disabled-medium);
   }
 
   .rc-pagination-jump-prev,
   .rc-pagination-jump-next {
     & span.gsi-pagination-navigation-jump-icon {
-      color: ${(props: IPagination) =>
-        props.buttonColor ? props.buttonColor : '#396faa'};
+      color: ${buttonColor};
       vertical-align: middle;
     }
     &:not(:hover) {
@@ -51,13 +52,12 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   .rc-pagination-simple .rc-pagination-simple-pager button:hover,
   .rc-pagination-simple .rc-pagination-simple-pager button:active,
   .rc-pagination-simple .rc-pagination-simple-pager button:focus {
-    border-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+    border-color: ${buttonColor};
   }
 
   .rc-pagination-item-active {
     background-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+      props.buttonColor || 'var(--ui-pagination-active)'};
   }
 
   .rc-pagination-item:hover a,
@@ -73,12 +73,11 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
   .rc-pagination-simple .rc-pagination-simple-pager button:hover,
   .rc-pagination-simple .rc-pagination-simple-pager button:active,
   .rc-pagination-simple .rc-pagination-simple-pager button:focus {
-    color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+    color: ${buttonColor};
   }
 
   .rc-pagination-item-active:hover a {
-    color: white;
+    color: var(--ui-active-foreground);
   }
 
   .rc-pagination-item,
@@ -96,17 +95,14 @@ export const PaginationStyled = styled<PropsWithChildren<any>>(Pagination)`
 
   /*SELECT*/
   li.rc-select-dropdown-menu-item-active {
-    background-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+    background-color: ${buttonColor};
   }
 
   .rc-select-focused .rc-select-selection,
   .rc-select-enabled .rc-select-selection:hover {
-    border-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+    border-color: ${buttonColor};
   }
   .rc-select-enabled .rc-select-selection:active {
-    border-color: ${(props: IPagination) =>
-      props.buttonColor ? props.buttonColor : '#396faa'};
+    border-color: ${buttonColor};
   }
 `;

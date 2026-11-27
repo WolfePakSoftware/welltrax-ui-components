@@ -43,7 +43,7 @@ export const InputColor = styled.button`
   background: ${(props: ITypeInputColor) =>
     props.defaultColor && props.defaultColor};
   display: flex;
-  border: solid 1px gray;
+  border: solid 1px var(--ui-color-picker-border);
   border-radius: 7px;
   cursor: ${(props: ITypeInputColor) =>
     props.disable ? 'not-allowed' : 'default'};

@@ -20,6 +20,24 @@ It's an extension of the blueprint framework. It has other components that are n
 - VOrgChart - Native Component uses orgchart library. Useful to represent hierarchies.
 - VSearchSelect - Select with virtual scroll
 
+## Design System Setup
+
+This library requires the PakEnergy Design System and UI roles to be mounted in your app:
+
+```tsx
+import '@pakenergy/design-system/dist/tokens.css';
+import { UIRoles } from 'welltrax-ui-components';
+
+function App() {
+  return (
+    <>
+      <UIRoles />
+      {/* your app */}
+    </>
+  );
+}
+```
+
 ## To build library UI.
 - npm run build
 

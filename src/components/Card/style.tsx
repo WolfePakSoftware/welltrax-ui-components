@@ -47,7 +47,7 @@ export const VCardHeader = styled.div`
   flex-direction: ${(props: ICardPanelProps) =>
     props.headerOrientation || 'row'};
   background: ${(props: ICardPanelProps) =>
-    props.headerBackgroundColor || '#E8E8E8'};
+    props.headerBackgroundColor || 'var(--ui-muted-neutral-light)'};
   justify-content: ${(props: ICardPanelProps) =>
     props.headerJustifyContent === 'center'
       ? 'center'
@@ -65,7 +65,8 @@ export const VCardHeader = styled.div`
 
 export const VCardTextSpan = styled.span`
   height: 100%;
-  color: ${(props: ICardPanelProps) => props.headerColor || '#5D5D5D'};
+  color: ${(props: ICardPanelProps) =>
+    props.headerColor || 'var(--ui-muted-foreground-text-dark)'};
   display: flex;
   align-items: center;
   flex-direction: row;

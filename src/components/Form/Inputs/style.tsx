@@ -107,7 +107,7 @@ export const StyledFormGroup = styled<PropsWithChildren<any>>(FormGroup)`
                 & .gsi-error-span {
                     padding-top: 1px;
                     font-size: 12px;
-                    color: #e21a1a;
+                    color: var(--ui-error-text);
                     text-align: start;
                   }
             }
@@ -118,7 +118,7 @@ export const StyledFormGroup = styled<PropsWithChildren<any>>(FormGroup)`
 export const StyledInput = styled<PropsWithChildren<any>>(StyledFormGroup)`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--ui-label-background);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;
@@ -151,7 +151,7 @@ export const StyledNumericInput = styled<PropsWithChildren<any>>(
 )`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--ui-label-background);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;
@@ -171,7 +171,7 @@ export const StyledNumericInput = styled<PropsWithChildren<any>>(
 export const StyledDatePicker = styled<PropsWithChildren<any>>(StyledFormGroup)`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--ui-label-background);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;
@@ -237,7 +237,7 @@ export const StyledTagsInput = styled<PropsWithChildren<any>>(StyledFormGroup)`
 export const StyledDateRange = styled<PropsWithChildren<any>>(StyledFormGroup)`
   .gsi-input-and-error-container {
     & span.tipLabel {
-      background: white;
+      background: var(--ui-label-background);
       margin-bottom: -7px;
       z-index: 1;
       width: fit-content;
@@ -302,7 +302,7 @@ export const StyledPopOverWrapper = styled<PropsWithChildren<any>>(
             display: flex;
             justify-content: space-between;
             &:focus {
-              outline: rgba(16, 22, 26, 0.4) auto 2px;
+              outline: var(--ui-focus-outline) auto 2px;
               outline-offset: 2px;
             }
             & span.${Classes.BUTTON_TEXT} {
@@ -370,12 +370,14 @@ export const StyledRadioButton = styled<PropsWithChildren<any>>(
 export const IconDate = styled('div')`
   display: flex;
   background-color: ${(props: IIconStyle) =>
-    props.backgroundColor ? props.backgroundColor : '#dcdcdc'};
+    props.backgroundColor
+      ? props.backgroundColor
+      : 'var(--ui-muted-neutral-medium)'};
   width: 30px;
   height: 30px;
   justify-content: center;
   align-items: center;
-  border: 1px solid #bdbfc0;
+  border: 1px solid var(--ui-input-border-strong);
   border-radius: 0 3px 3px 0;
   position: absolute;
   right: 0;
@@ -383,17 +385,17 @@ export const IconDate = styled('div')`
 
 export const DateInputContainer = styled<PropsWithChildren<any>>(DateInput)`
   .DayPicker-Day--today {
-    background: rgba(187, 222, 251, 0.6);
+    background: var(--ui-calendar-today);
   }
   .DayPicker-Day:hover {
-    background: rgba(225, 245, 254, 0.8) !important;
-    color: #182026 !important;
+    background: var(--ui-option-hover) !important;
+    color: var(--ui-foreground-on-card) !important;
   }
   .DayPicker-Day.DayPicker-Day--disabled,
   .DayPicker-Day.DayPicker-Day--disabled.DayPicker-Day:hover {
     background: transparent !important;
     cursor: no-drop !important;
-    color: #d2d5d8 !important;
+    color: var(--ui-text-disabled-light) !important;
   }
   .DayPicker-Day {
     margin: 1px !important;
@@ -416,23 +418,23 @@ export const StyledMaskInput = styled(MaskedInput)`
   border-radius: 3px;
   ${(props: IMaskedInput) =>
     props.intent && props.intent !== Intent.DANGER
-      ? 'box-shadow: 0 0 0 0 rgba(19, 124, 189, 0), 0 0 0 0 rgba(19, 124, 189, 0), inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'
-      : 'box-shadow: 0 0 0 0 rgba(219, 55, 55, 0), 0 0 0 0 rgba(219, 55, 55, 0), inset 0 0 0 1px #db3737, inset 0 0 0 1px rgba(16, 22, 26, 0.15), inset 0 1px 1px rgba(16, 22, 26, 0.2);'}
+      ? 'box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, inset 0 0 0 1px var(--ui-input-ring), inset 0 1px 1px var(--ui-shadow);'
+      : 'box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, inset 0 0 0 1px var(--ui-error-ring), inset 0 0 0 1px var(--ui-input-ring), inset 0 1px 1px var(--ui-shadow);'}
   background: ${(props: IMaskedInput) =>
-    props.disabled ? 'rgba(206, 217, 224, 0.5)' : '#ffffff'};
+    props.disabled ? 'var(--ui-fill-disabled)' : 'var(--ui-active-foreground)'};
   box-shadow: ${(props: IMaskedInput) => props.disabled && 'none'};
   cursor: ${(props: IMaskedInput) => props.disabled && 'not-allowed'};
   height: 30px;
   padding: 0 10px;
   vertical-align: middle;
   line-height: 30px;
-  color: #182026;
+  color: var(--ui-foreground-on-card);
   font-size: 14px;
   font-weight: 400;
   transition: box-shadow 100ms cubic-bezier(0.4, 1, 0.75, 0.9);
   &:focus {
-    box-shadow: 0 0 0 1px #137cbd, 0 0 0 3px rgba(19, 124, 189, 0.3),
-      inset 0 1px 1px rgba(16, 22, 26, 0.2);
+    box-shadow: 0 0 0 1px var(--ui-focus-ring), 0 0 0 3px var(--ui-focus-glow),
+      inset 0 1px 1px var(--ui-shadow);
   }
 `;
 

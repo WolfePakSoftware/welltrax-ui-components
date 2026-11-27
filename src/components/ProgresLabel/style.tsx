@@ -18,7 +18,7 @@ export const ProgressLabelSegmentFirst = styled.div`
   width: ${(props: IProgresLabelStyle) => props.Width || '50%'};
   display: inline-flex;
   background-color: ${(props: IProgresLabelStyle) =>
-    props.BackgorundColor || '#92d36e'};
+    props.BackgorundColor || 'var(--ui-success-background)'};
   border-radius: 28px 0 0 28px;
   ${x}
   text-align: center;
@@ -28,7 +28,7 @@ export const ProgressLabelSegmentLast = styled.div`
   width: ${(props: IProgresLabelStyle) => props.Width || '50%'};
   display: inline-flex;
   background-color: ${(props: IProgresLabelStyle) =>
-    props.BackgorundColor || '#eff6fd'};
+    props.BackgorundColor || 'var(--ui-progress-pending)'};
   border-radius: 0 28px 28px 0;
   border-style: solid;
   border-width: 1px 1px 1px 0px;
@@ -39,7 +39,7 @@ export const ProgressLabelSegmentCenter = styled.div`
   width: ${(props: IProgresLabelStyle) => props.Width || '50%'};
   display: inline-flex;
   background-color: ${(props: IProgresLabelStyle) =>
-    props.BackgorundColor || '#eff6fd'};
+    props.BackgorundColor || 'var(--ui-progress-pending)'};
   border-style: solid;
   border-width: 1px 1px 1px 0;
   text-align: center;
@@ -49,7 +49,7 @@ export const ProgressLabelSegmentUnic = styled.div`
   width: ${(props: IProgresLabelStyle) => props.Width || '100%'};
   display: inline-flex;
   background-color: ${(props: IProgresLabelStyle) =>
-    props.BackgorundColor || '#92d36e'};
+    props.BackgorundColor || 'var(--ui-success-background)'};
   border-radius: 28px;
   border-style: solid;
   border-width: 1px;
@@ -65,5 +65,5 @@ export const dividerProgresVertical = {
   marginRight: 0,
   marginLeft: 0,
   marginBottom: 0,
-  borderRight: '1px solid #182026'
+  borderRight: '1px solid var(--ui-foreground-on-card)'
 };
