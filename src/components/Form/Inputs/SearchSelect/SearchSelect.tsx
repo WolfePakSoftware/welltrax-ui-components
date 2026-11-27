@@ -233,7 +233,10 @@ export const SearchSelect = observer((props: IProps) => {
         }
         !props.disabled && setIsOpen(nextOpenState);
         !nextOpenState && !props.multi && onChangeItems(selection);
-        initValueStateMulti(nextOpenState);
+        // Typing into a closed multi-select opens it; don't wipe the text just typed.
+        const isOpeningWhileTyping =
+          nextOpenState && enableFilter && search.length > 0;
+        !isOpeningWhileTyping && initValueStateMulti(nextOpenState);
         !props.multi && selection && setSearchSelectionText(selection || '');
         !props.multi && options.length === 0 && clearSearch();
       }
